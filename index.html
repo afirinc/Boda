@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yolanda & Julio | Nuestra Boda</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f7f3;
+    color: #3e4a3f;
+    text-align: center;
+}
+
+.hero {
+    padding: 100px 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    margin: 0;
+}
+
+.date {
+    font-size: 1.2em;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.section {
+    padding: 60px 20px;
+}
+
+.countdown {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 30px;
+    background-color: #6b8e6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #4f6f4f;
+}
+
+.footer {
+    margin-top: 50px;
+    font-size: 0.9em;
+    opacity: 0.6;
+}
+
+@media(max-width: 600px){
+    h1 {
+        font-size: 2.2em;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <h1>Yolanda<br>&<br>Julio</h1>
+    <div class="date">6 de Junio 2026 | San Luis Potosí, S.L.P.</div>
+</div>
+
+<div class="section">
+    <h2>Cuenta Regresiva</h2>
+    <div id="countdown" class="countdown"></div>
+</div>
+
+<div class="section">
+    <h2>Ubicación</h2>
+    <p>San Luis Potosí, S.L.P.</p>
+    <a class="button" href="https://maps.app.goo.gl/DuRkPeKqKg6esk5N6" target="_blank">
+        Ver en Google Maps
+    </a>
+</div>
+
+<div class="section">
+    <h2>Confirmar Asistencia</h2>
+    <a class="button" href="https://forms.gle/" target="_blank">
+        Confirmar aquí
+    </a>
+</div>
+
+<div class="footer">
+    Con amor, Yolanda & Julio
+</div>
+
+<script>
+const weddingDate = new Date("June 6, 2026 17:00:00").getTime();
+
+const countdown = setInterval(function() {
+
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    days + " días " + hours + " hrs " + minutes + " min " + seconds + " seg ";
+
+  if (distance < 0) {
+    clearInterval(countdown);
+    document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
