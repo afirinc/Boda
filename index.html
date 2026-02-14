@@ -3,201 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boda - César & Yolanda</title>
+<title>Julio Cesar & Yolanda | Nuestra Boda</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-:root{
-    --verde:#6B8E6E;
-    --beige:#F4EFEA;
-    --dorado:#C6A75E;
-    --texto:#333;
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(rgba(248,247,243,0.9), rgba(248,247,243,0.9)),
+    url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6") center/cover fixed;
+    color: #3e4a3f;
+    text-align: center;
+    scroll-behavior: smooth;
 }
 
-body{
-    margin:0;
-    font-family:'Montserrat', sans-serif;
-    background:var(--beige);
-    color:var(--texto);
-    scroll-behavior:smooth;
+.section {
+    padding: 80px 20px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s ease;
 }
 
-section{
-    padding:80px 20px;
-    text-align:center;
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-h1,h2{
-    font-family:'Playfair Display', serif;
-    letter-spacing:2px;
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
 }
 
-.hero{
-    height:100vh;
-    background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
-    url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    color:white;
+.date {
+    letter-spacing: 2px;
+    margin-top: 20px;
 }
 
-.hero h1{
-    font-size:3rem;
-    margin:0;
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 30px;
+    background-color: #6b8e6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
 }
 
-.fecha{
-    font-size:1.3rem;
-    margin-top:10px;
+.button:hover {
+    background-color: #4f6f4f;
 }
 
-.contador{
-    margin-top:20px;
-    font-size:1.5rem;
-    font-weight:500;
-    color:var(--dorado);
+.countdown {
+    font-size: 1.4em;
+    margin-top: 20px;
 }
 
-.card{
-    max-width:600px;
-    margin:20px auto;
-    padding:30px;
-    background:white;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,.1);
+audio {
+    display: none;
 }
 
-.dresscode{
-    background:var(--verde);
-    color:white;
+@media(max-width: 600px){
+    h1 {
+        font-size: 2.2em;
+    }
 }
 
-input, button{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border-radius:6px;
-    border:1px solid #ccc;
-    font-family:'Montserrat', sans-serif;
-}
-
-button{
-    background:var(--dorado);
-    color:white;
-    border:none;
-    cursor:pointer;
-    transition:.3s;
-}
-
-button:hover{
-    background:#b8954c;
-}
-
-.galeria img{
-    width:100%;
-    max-width:300px;
-    border-radius:10px;
-    margin:10px;
-}
-
-footer{
-    padding:30px;
-    background:#222;
-    color:white;
-    font-size:.9rem;
-}
 </style>
 </head>
 
 <body>
 
+<!-- MÚSICA -->
+<audio id="musica" loop>
+    <source src="Romance.mp3" type="audio/mpeg">
+</audio>
+
 <!-- HERO -->
-<section class="hero">
-    <h1>César & Yolanda</h1>
-    <div class="fecha">6 de Junio 2026</div>
-    <div class="contador" id="contador"></div>
-</section>
+<div class="section" style="opacity:1; transform:none;">
+    <h1>Julio Cesar Velazquez Perez<br>&<br>Yolanda Mata Ramirez</h1>
+    <div class="date">6 de Junio del 2026</div>
+    <a class="button" onclick="abrirInvitacion()">Abrir Invitación</a>
+</div>
 
-<!-- CEREMONIA -->
-<section>
-    <h2>Ceremonia</h2>
-    <div class="card">
-        <p><strong>Iglesia:</strong> 16 de Septiembre 835</p>
-        <p><strong>Hora:</strong> 5:00 PM</p>
-    </div>
-</section>
+<!-- CUENTA REGRESIVA -->
+<div class="section">
+    <h2>Cuenta Regresiva</h2>
+    <div id="countdown" class="countdown"></div>
+</div>
 
-<!-- RECEPCIÓN -->
-<section>
+<!-- IGLESIA -->
+<div class="section">
+    <h2>Ceremonia Religiosa</h2>
+    <p>5:00 PM</p>
+    <p>16 de Septiembre 835, Barrio de Santiago,<br>
+    78049 San Luis Potosí, S.L.P.</p>
+    <a class="button" href="https://maps.app.goo.gl/jHfZXRj7AtZLhR3e7" target="_blank">
+        Ver ubicación
+    </a>
+</div>
+
+<!-- FIESTA -->
+<div class="section">
     <h2>Recepción</h2>
-    <div class="card">
-        <p><strong>Salón:</strong> La Antigua</p>
-        <p><strong>Después de la ceremonia</strong></p>
-    </div>
-</section>
+    <p>6:00 PM</p>
+    <p>Zacatecas - San Luis Potosi 105,<br>
+    San Angel 1ra Secc, 78120 San Luis Potosí, S.L.P.</p>
+    <a class="button" href="https://maps.app.goo.gl/LCTaPW8daMZmoBxU7" target="_blank">
+        Ver ubicación
+    </a>
+</div>
 
-<!-- DRESS CODE -->
-<section class="dresscode">
+<!-- VESTIMENTA -->
+<div class="section">
     <h2>Código de Vestimenta</h2>
-    <div class="card" style="background:white; color:#333;">
-        <p><strong>Formal Elegante</strong></p>
-        <p>Mujeres: Evitar rojo, blanco y rosa.</p>
-        <p>Hombres: Se sugiere traje oscuro.</p>
-    </div>
-</section>
+    <p>Formal</p>
+    <p>No llevar vestidos color rojo, rosa o blanco.</p>
+</div>
 
-<!-- CONFIRMACION -->
-<section>
-    <h2>Confirma tu asistencia</h2>
-    <div class="card">
-        <form action="https://formsubmit.co/TUCORREO@gmail.com" method="POST">
-            <input type="text" name="Nombre" placeholder="Tu nombre completo" required>
-            <input type="number" name="Invitados" placeholder="Número de acompañantes" required>
-            <button type="submit">Confirmar asistencia</button>
-        </form>
-        <p style="font-size:.8rem;">*Reemplaza TUCORREO@gmail.com por tu correo real</p>
-    </div>
-</section>
-
-<!-- GALERIA -->
-<section>
-    <h2>Nuestra Historia</h2>
-    <div class="galeria">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80">
-        <img src="https://images.unsplash.com/photo-1529634806980-59c82d6d3e1c?auto=format&fit=crop&w=800&q=80">
-        <img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&w=800&q=80">
-    </div>
-</section>
-
-<footer>
-    Con amor, César & Yolanda — 2026
-</footer>
+<!-- MENSAJE -->
+<div class="section">
+    <h2>Nuestro Pensamiento</h2>
+    <p>
+    A veces pensamos que hay cosas que no son para nosotros,  
+    pero la vida nos enseña cuál es nuestro verdadero camino.
+    </p>
+</div>
 
 <script>
-const fechaBoda = new Date("June 6, 2026 17:00:00").getTime();
 
-const contador = setInterval(function(){
-    const ahora = new Date().getTime();
-    const distancia = fechaBoda - ahora;
+// REPRODUCIR MÚSICA
+function abrirInvitacion(){
+    document.getElementById("musica").play();
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+    });
+}
 
-    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+// CUENTA REGRESIVA
+const weddingDate = new Date("June 6, 2026 17:00:00").getTime();
 
-    document.getElementById("contador").innerHTML =
-    dias + " días • " + horas + "h " + minutos + "m " + segundos + "s";
+const countdown = setInterval(function() {
 
-    if(distancia < 0){
-        clearInterval(contador);
-        document.getElementById("contador").innerHTML = "¡Hoy es el gran día!";
-    }
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    days + " días " + hours + " hrs " + minutes + " min " + seconds + " seg ";
+
+  if (distance < 0) {
+    clearInterval(countdown);
+    document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
+  }
 }, 1000);
+
+// ANIMACIÓN SCROLL
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+        sec.classList.add('visible');
+    }
+  });
+});
+
 </script>
 
 </body>
 </html>
-
