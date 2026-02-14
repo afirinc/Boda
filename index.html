@@ -5,90 +5,124 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Julio Cesar & Yolanda | Nuestra Boda</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(rgba(248,247,243,0.9), rgba(248,247,243,0.9)),
-    url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6") center/cover fixed;
-    color: #3e4a3f;
-    text-align: center;
-    scroll-behavior: smooth;
-}
-
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3em;
-}
-
-.date {
-    letter-spacing: 2px;
-    margin-top: 20px;
-}
-
-.button {
-    display: inline-block;
-    padding: 15px 30px;
-    margin-top: 30px;
-    background-color: #6b8e6b;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #4f6f4f;
-}
-
-.section {
-    padding: 80px 20px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 1s ease;
-}
-
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.countdown {
-    font-size: 1.4em;
-    margin-top: 20px;
-}
-
-audio {
-    display: none;
+body{
+    margin:0;
+    font-family:'Montserrat',sans-serif;
+    background:#f6f6f4;
+    color:#3e4a3f;
+    overflow-x:hidden;
 }
 
 /* PORTADA */
-.cover {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(rgba(248,247,243,0.95), rgba(248,247,243,0.95)),
-    url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6") center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transition: opacity 1s ease;
+.cover{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:
+    linear-gradient(rgba(246,246,244,0.92),rgba(246,246,244,0.92)),
+    url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6") center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    z-index:1000;
+    transition:1s ease;
 }
 
-.content {
-    display: none;
+.cover h1{
+    font-family:'Great Vibes',cursive;
+    font-size:3em;
+    margin:0;
 }
 
-@media(max-width: 600px){
-    h1 {
-        font-size: 2.2em;
-    }
+.cover p{
+    letter-spacing:3px;
+    margin-top:15px;
+}
+
+.btn{
+    margin-top:30px;
+    padding:14px 35px;
+    border-radius:30px;
+    border:none;
+    background:#6b8e6b;
+    color:white;
+    cursor:pointer;
+    font-size:1em;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#4f6f4f;
+}
+
+.content{
+    display:none;
+    animation:fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
+}
+
+/* SECCIONES */
+.seccion{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.frase{
+    background:#d9ded8;
+    padding:40px 20px;
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:1.1em;
+}
+
+.titulo-seccion{
+    font-family:'Great Vibes',cursive;
+    font-size:2.5em;
+    margin-top:40px;
+}
+
+.lugar{
+    letter-spacing:3px;
+    font-size:.9em;
+    margin-bottom:30px;
+}
+
+.imagen-lugar{
+    width:90%;
+    max-width:500px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.direccion{
+    margin-top:25px;
+    line-height:1.6;
+}
+
+.hora{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.countdown{
+    font-size:1.3em;
+    margin-top:20px;
+}
+
+audio{ display:none; }
+
+@media(max-width:600px){
+    .cover h1{ font-size:2.2em; }
 }
 
 </style>
@@ -96,108 +130,104 @@ audio {
 
 <body>
 
-<!-- MÚSICA -->
 <audio id="musica" loop>
-    <source src="Romance.mp3" type="audio/mpeg">
+<source src="Romance.mp3" type="audio/mpeg">
 </audio>
 
 <!-- PORTADA -->
 <div class="cover" id="cover">
-    <h1>Julio Cesar Velazquez Perez<br>&<br>Yolanda Mata Ramirez</h1>
-    <div class="date">6 de Junio del 2026</div>
-    <a class="button" onclick="abrirInvitacion()">Abrir Invitación</a>
+    <h1>Julio Cesar<br>&<br>Yolanda</h1>
+    <p>06 • 06 • 2026</p>
+    <button class="btn" onclick="abrirInvitacion()">Abrir Invitación</button>
 </div>
 
-<!-- CONTENIDO OCULTO -->
+<!-- CONTENIDO -->
 <div class="content" id="contenido">
 
-    <div class="section">
-        <h2>Cuenta Regresiva</h2>
-        <div id="countdown" class="countdown"></div>
+<section class="seccion">
+    <h2>Cuenta Regresiva</h2>
+    <div id="countdown" class="countdown"></div>
+</section>
+
+<section class="seccion">
+    <div class="frase">
+        Queremos que seas testigo de nuestro amor acompañándonos
+        en este día tan especial
     </div>
 
-    <div class="section">
-        <h2>Ceremonia Religiosa</h2>
-        <p>5:00 PM</p>
-        <p>16 de Septiembre 835, Barrio de Santiago,<br>
-        78049 San Luis Potosí, S.L.P.</p>
-        <a class="button" href="https://maps.app.goo.gl/jHfZXRj7AtZLhR3e7" target="_blank">
-            Ver ubicación
-        </a>
-    </div>
+    <h2 class="titulo-seccion">Ceremonia</h2>
+    <h3 class="lugar">Catedral del Barrio de Santiago</h3>
 
-    <div class="section">
-        <h2>Recepción</h2>
-        <p>6:00 PM</p>
-        <p>Zacatecas - San Luis Potosi 105,<br>
-        San Angel 1ra Secc, 78120 San Luis Potosí, S.L.P.</p>
-        <a class="button" href="https://maps.app.goo.gl/LCTaPW8daMZmoBxU7" target="_blank">
-            Ver ubicación
-        </a>
-    </div>
+    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935"
+         class="imagen-lugar">
 
-    <div class="section">
-        <h2>Código de Vestimenta</h2>
-        <p>Formal</p>
-        <p>No llevar vestidos color rojo, rosa o blanco.</p>
-    </div>
+    <p class="direccion">
+        16 de Septiembre 835<br>
+        Barrio de Santiago<br>
+        San Luis Potosí, S.L.P.
+    </p>
 
-    <div class="section">
-        <p>
-        A veces pensamos que hay cosas que no son para nosotros,<br>
-        pero la vida nos enseña cuál es nuestro verdadero camino.
-        </p>
-    </div>
+    <div class="hora">5:00 PM</div>
+
+    <a class="btn"
+       href="https://maps.app.goo.gl/jHfZXRj7AtZLhR3e7"
+       target="_blank">Ver ubicación</a>
+</section>
+
+<section class="seccion">
+    <h2 class="titulo-seccion">Recepción</h2>
+
+    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485"
+         class="imagen-lugar">
+
+    <p class="direccion">
+        Zacatecas - San Luis Potosí 105<br>
+        San Ángel 1ra Secc<br>
+        San Luis Potosí, S.L.P.
+    </p>
+
+    <div class="hora">6:00 PM</div>
+
+    <a class="btn"
+       href="https://maps.app.goo.gl/LCTaPW8daMZmoBxU7"
+       target="_blank">Ver ubicación</a>
+</section>
+
+<section class="seccion">
+    <h2 class="titulo-seccion">Código de Vestimenta</h2>
+    <p>Formal</p>
+    <p>No llevar vestidos color rojo, rosa o blanco.</p>
+</section>
 
 </div>
 
 <script>
 
 function abrirInvitacion(){
+    document.getElementById("cover").style.opacity="0";
+    setTimeout(()=>{
+        document.getElementById("cover").style.display="none";
+        document.getElementById("contenido").style.display="block";
+    },800);
+
     document.getElementById("musica").play();
-
-    const cover = document.getElementById("cover");
-    const contenido = document.getElementById("contenido");
-
-    cover.style.opacity = "0";
-
-    setTimeout(() => {
-        cover.style.display = "none";
-        contenido.style.display = "block";
-    }, 1000);
 }
 
-// CUENTA REGRESIVA
 const weddingDate = new Date("June 6, 2026 17:00:00").getTime();
 
-const countdown = setInterval(function() {
+setInterval(()=>{
+    const now=new Date().getTime();
+    const distance=weddingDate-now;
 
-  const now = new Date().getTime();
-  const distance = weddingDate - now;
+    const days=Math.floor(distance/(1000*60*60*24));
+    const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+    const seconds=Math.floor((distance%(1000*60))/1000);
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("countdown").innerHTML=
+    days+" días "+hours+" hrs "+minutes+" min "+seconds+" seg";
 
-  document.getElementById("countdown").innerHTML =
-    days + " días " + hours + " hrs " + minutes + " min " + seconds + " seg ";
-
-  if (distance < 0) {
-    clearInterval(countdown);
-    document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
-  }
-}, 1000);
-
-// ANIMACIÓN SCROLL
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('.section').forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-        sec.classList.add('visible');
-    }
-  });
-});
+},1000);
 
 </script>
 
