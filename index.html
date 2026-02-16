@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nuestra Boda</title>
+<title>Julio Cesar & Yolanda | Nuestra Boda</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
@@ -12,8 +12,9 @@
 body {
     margin:0;
     font-family:'Poppins', sans-serif;
-    background:#f9f9f9;
-    color:#333;
+    background:#fdfaf3;
+    background-image:url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    color:#3a3a3a;
     text-align:center;
 }
 
@@ -23,174 +24,173 @@ body {
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    background:white;
 }
 
 .boton-abrir {
     padding:15px 40px;
     font-size:18px;
     border:none;
-    background:#2e7d32;
+    background:#6d8b74;
     color:white;
     border-radius:30px;
     cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 #invitacion {
     display:none;
-    padding:40px 20px;
-    background:white;
+    padding:60px 20px;
     position:relative;
+    background:white;
+    margin:20px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* Enredaderas suaves */
-.enredadera-top {
+#invitacion::before,
+#invitacion::after{
+    content:"";
     position:absolute;
     top:0;
-    left:0;
-    width:100%;
-    opacity:0.1;
+    width:120px;
+    height:100%;
+    background:url("https://i.imgur.com/4NZ6uLY.png") no-repeat center;
+    background-size:contain;
+    opacity:0.15;
 }
 
-.enredadera-bottom {
-    position:absolute;
-    bottom:0;
-    right:0;
-    width:100%;
-    opacity:0.1;
-}
+#invitacion::before{ left:0; }
+#invitacion::after{ right:0; transform:scaleX(-1); }
 
-h1 {
+h1{
     font-family:'Playfair Display', serif;
-    font-size:40px;
+    font-size:42px;
 }
 
-.fecha {
+.fecha{
     font-size:20px;
-    margin-bottom:30px;
+    margin-bottom:40px;
 }
 
-.seccion {
-    margin:50px 0;
+.seccion{
+    margin:60px 0;
 }
 
-.imagen {
-    width:80%;
-    max-width:400px;
-    border-radius:20px;
+.imagen{
+    width:85%;
+    max-width:420px;
+    border-radius:15px;
     margin:20px 0;
+    box-shadow:0 6px 15px rgba(0,0,0,0.1);
 }
 
-.confirmacion {
-    margin-top:40px;
+.boton-maps{
+    display:inline-block;
+    padding:10px 25px;
+    margin-top:10px;
+    background:#6d8b74;
+    color:white;
+    text-decoration:none;
+    border-radius:20px;
 }
 
-input, button {
+.confirmacion{
+    margin-top:50px;
+}
+
+input{
     padding:10px;
-    margin:10px;
     border-radius:10px;
     border:1px solid #ccc;
+    margin:10px;
 }
 
-.boton-confirmar {
-    background:#2e7d32;
-    color:white;
-    border:none;
-    cursor:pointer;
-}
-
-.familia-box {
-    background:#f1f8f4;
-    padding:15px;
-    border-radius:15px;
-    margin-bottom:30px;
-}
+audio{ display:none; }
 
 </style>
 </head>
+
 <body>
 
+<!-- PORTADA -->
 <div id="inicio">
-    <h1>Nuestra Boda</h1>
+    <h1>Julio Cesar Velazquez Perez<br>&<br>Yolanda Mata Ramirez</h1>
+    <p class="fecha">6 de Junio del 2026</p>
     <button class="boton-abrir" onclick="abrirInvitacion()">Abrir Invitación</button>
 </div>
 
+<!-- INVITACIÓN -->
 <div id="invitacion">
 
-    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="enredadera-top">
-    <img src="https://images.unsplash.com/photo-1493244040629-496f6d136cc3" class="enredadera-bottom">
+    <h1>¡Nos Casamos!</h1>
+    <p class="fecha">6 de Junio del 2026</p>
 
-    <h1>Julio & Yolanda</h1>
-    <div class="fecha">6 de Junio 2026</div>
-
-    <div id="datosFamilia"></div>
-
+    <!-- CEREMONIA -->
     <div class="seccion">
-        <h2>Ceremonia</h2>
-        <p>Iglesia de Santiago</p>
+        <h2>Ceremonia Religiosa</h2>
+        <p><strong>Iglesia de Santiago</strong></p>
+        <p>5:00 PM</p>
+        <p>16 de Septiembre 835, Barrio de Santiago,<br>
+        78049 San Luis Potosí, S.L.P.</p>
+
+        <a class="boton-maps"
+        href="https://www.google.com/maps/search/?api=1&query=Iglesia+de+Santiago+San+Luis+Potosi"
+        target="_blank">Ver en Google Maps</a>
+
         <img class="imagen" src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
     </div>
 
+    <!-- RECEPCIÓN -->
     <div class="seccion">
         <h2>Recepción</h2>
-        <p>La Antigua</p>
+        <p><strong>Salón La Antigua</strong></p>
+        <p>6:00 PM</p>
+        <p>Zacatecas - San Luis Potosi 105,<br>
+        San Angel 1ra Secc, 78120 San Luis Potosí, S.L.P.</p>
+
+        <a class="boton-maps"
+        href="https://www.google.com/maps/search/?api=1&query=Salon+La+Antigua+San+Luis+Potosi"
+        target="_blank">Ver en Google Maps</a>
+
         <img class="imagen" src="https://images.unsplash.com/photo-1519741497674-611481863552">
     </div>
 
+    <!-- CONFIRMACIÓN -->
     <div class="confirmacion">
         <h2>Confirmar Asistencia</h2>
-        <input type="number" id="cantidad" placeholder="¿Cuántas personas?" min="1">
+        <p>Familia invitada: 4 personas</p>
+        <input type="text" id="nombre" placeholder="Nombre de la familia">
         <br>
-        <button class="boton-confirmar" onclick="confirmar()">Confirmar por WhatsApp</button>
+        <button class="boton-abrir" onclick="confirmar()">Confirmar por WhatsApp</button>
     </div>
 
 </div>
 
-<audio id="musica" src="musica1.mp3"></audio>
+<!-- MÚSICA -->
+<audio id="musica" loop>
+    <source src="musica1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="musica2" loop>
+    <source src="musica2.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 
-function abrirInvitacion() {
-    document.getElementById("inicio").style.display = "none";
-    document.getElementById("invitacion").style.display = "block";
-    document.getElementById("musica").play();
-}
+function abrirInvitacion(){
+    document.getElementById("inicio").style.display="none";
+    document.getElementById("invitacion").style.display="block";
 
-/* Leer parámetros del link */
-const params = new URLSearchParams(window.location.search);
-const familia = params.get("familia");
-const lado = params.get("lado");
-const max = params.get("max");
-
-if(familia && max){
-    document.getElementById("datosFamilia").innerHTML = `
-        <div class="familia-box">
-            <h3>Familia ${familia}</h3>
-            <p>Tienen ${max} lugares reservados</p>
-        </div>
-    `;
+    const musica=document.getElementById("musica");
+    musica.volume=0.7;
+    musica.play().catch(e=>console.log("Autoplay bloqueado"));
 }
 
 function confirmar(){
-
-    const cantidad = document.getElementById("cantidad").value;
-
-    if(!cantidad){
-        alert("Por favor ingresa cantidad");
-        return;
-    }
-
-    if(max && cantidad > max){
-        alert("Solo pueden confirmar hasta " + max + " personas");
-        return;
-    }
-
-    const numero = "524445391211"; // TU NUMERO CON LADA 52
-    const mensaje = `Hola, confirmamos ${cantidad} personas de la familia ${familia} para el 6 de Junio 💚`;
-
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-
-    window.open(url, "_blank");
+    const nombre=document.getElementById("nombre").value;
+    const mensaje=`Hola Julio y Yolanda, confirmamos 4 personas de la familia ${nombre} para el 6 de junio 💚`;
+    const url=`https://wa.me/524445391211?text=${encodeURIComponent(mensaje)}`;
+    window.open(url,'_blank');
 }
 
 </script>
