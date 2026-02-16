@@ -3,194 +3,240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Julio Cesar & Yolanda | Nuestra Boda</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<title>Julio César & Yolanda | Nuestra Boda</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
-body {
+body{
     margin:0;
-    font-family:'Poppins', sans-serif;
-    background:#fdfaf3;
-    background-image:url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-    color:#3a3a3a;
+    background:#f6f1e8;
+    font-family:'Cormorant Garamond', serif;
+    color:#3e3e3e;
     text-align:center;
 }
 
-#inicio {
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
+.container{
+    max-width:600px;
+    margin:auto;
+    padding:30px 20px;
 }
 
-.boton-abrir {
-    padding:15px 40px;
-    font-size:18px;
-    border:none;
-    background:#6d8b74;
-    color:white;
-    border-radius:30px;
-    cursor:pointer;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+/* Imagen superior */
+.top-image img{
+    width:100%;
+    border-radius:10px;
 }
 
-#invitacion {
-    display:none;
-    padding:60px 20px;
-    position:relative;
-    background:white;
-    margin:20px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-#invitacion::before,
-#invitacion::after{
-    content:"";
-    position:absolute;
-    top:0;
-    width:120px;
-    height:100%;
-    background:url("https://i.imgur.com/4NZ6uLY.png") no-repeat center;
-    background-size:contain;
-    opacity:0.15;
-}
-
-#invitacion::before{ left:0; }
-#invitacion::after{ right:0; transform:scaleX(-1); }
-
-h1{
-    font-family:'Playfair Display', serif;
-    font-size:42px;
-}
-
-.fecha{
-    font-size:20px;
-    margin-bottom:40px;
-}
-
-.seccion{
-    margin:60px 0;
-}
-
-.imagen{
-    width:85%;
-    max-width:420px;
-    border-radius:15px;
+/* Marco floral */
+.floral{
     margin:20px 0;
-    box-shadow:0 6px 15px rgba(0,0,0,0.1);
 }
 
-.boton-maps{
+.floral img{
+    width:100%;
+    opacity:0.9;
+}
+
+/* Nombres */
+.names{
+    font-family:'Great Vibes', cursive;
+    font-size:3.2em;
+    margin:20px 0;
+}
+
+/* Fecha elegante */
+.date-section{
+    margin:30px 0;
+}
+
+.day{
+    font-family:'Playfair Display', serif;
+    letter-spacing:3px;
+}
+
+.big-number{
+    font-size:4.5em;
+    font-family:'Playfair Display', serif;
+    margin:10px 0;
+}
+
+.month{
+    font-family:'Playfair Display', serif;
+    letter-spacing:2px;
+}
+
+.message{
+    margin:30px 0;
+    font-size:1.1em;
+    line-height:1.6;
+}
+
+/* Secciones */
+.section{
+    margin:50px 0;
+}
+
+.section h2{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.section img{
+    width:100%;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.button{
     display:inline-block;
-    padding:10px 25px;
-    margin-top:10px;
-    background:#6d8b74;
+    margin-top:15px;
+    padding:12px 25px;
+    background:#7a9477;
     color:white;
     text-decoration:none;
-    border-radius:20px;
+    border-radius:30px;
+    font-size:0.9em;
 }
 
-.confirmacion{
-    margin-top:50px;
-}
-
-input{
-    padding:10px;
+/* Confirmación */
+.confirm{
+    background:#e8efe6;
+    padding:30px 20px;
     border-radius:10px;
-    border:1px solid #ccc;
-    margin:10px;
+    margin-top:40px;
 }
 
-audio{ display:none; }
+.confirm button{
+    display:block;
+    width:100%;
+    margin:10px 0;
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    font-size:1em;
+    background:#6b8e6b;
+    color:white;
+}
+
+.cover{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#f6f1e8;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.cover h1{
+    font-family:'Great Vibes', cursive;
+    font-size:3em;
+}
+
+.cover button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#6b8e6b;
+    color:white;
+    font-size:1em;
+}
 
 </style>
 </head>
 
 <body>
 
-<!-- PORTADA -->
-<div id="inicio">
-    <h1>Julio Cesar Velazquez Perez<br>&<br>Yolanda Mata Ramirez</h1>
-    <p class="fecha">6 de Junio del 2026</p>
-    <button class="boton-abrir" onclick="abrirInvitacion()">Abrir Invitación</button>
+<div class="cover" id="cover">
+    <h1>Julio César & Yolanda</h1>
+    <button onclick="abrirInvitacion()">Abrir Invitación</button>
 </div>
 
-<!-- INVITACIÓN -->
-<div id="invitacion">
-
-    <h1>¡Nos Casamos!</h1>
-    <p class="fecha">6 de Junio del 2026</p>
-
-    <!-- CEREMONIA -->
-    <div class="seccion">
-        <h2>Ceremonia Religiosa</h2>
-        <p><strong>Iglesia de Santiago</strong></p>
-        <p>5:00 PM</p>
-        <p>16 de Septiembre 835, Barrio de Santiago,<br>
-        78049 San Luis Potosí, S.L.P.</p>
-
-        <a class="boton-maps"
-        href="https://www.google.com/maps/search/?api=1&query=Iglesia+de+Santiago+San+Luis+Potosi"
-        target="_blank">Ver en Google Maps</a>
-
-        <img class="imagen" src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
-    </div>
-
-    <!-- RECEPCIÓN -->
-    <div class="seccion">
-        <h2>Recepción</h2>
-        <p><strong>Salón La Antigua</strong></p>
-        <p>6:00 PM</p>
-        <p>Zacatecas - San Luis Potosi 105,<br>
-        San Angel 1ra Secc, 78120 San Luis Potosí, S.L.P.</p>
-
-        <a class="boton-maps"
-        href="https://www.google.com/maps/search/?api=1&query=Salon+La+Antigua+San+Luis+Potosi"
-        target="_blank">Ver en Google Maps</a>
-
-        <img class="imagen" src="https://images.unsplash.com/photo-1519741497674-611481863552">
-    </div>
-
-    <!-- CONFIRMACIÓN -->
-    <div class="confirmacion">
-        <h2>Confirmar Asistencia</h2>
-        <p>Familia invitada: 4 personas</p>
-        <input type="text" id="nombre" placeholder="Nombre de la familia">
-        <br>
-        <button class="boton-abrir" onclick="confirmar()">Confirmar por WhatsApp</button>
-    </div>
-
-</div>
-
-<!-- MÚSICA -->
 <audio id="musica" loop>
-    <source src="musica1.mp3" type="audio/mpeg">
+    <source src="Romance.mp3" type="audio/mpeg">
+    <source src="Serenata.mp3" type="audio/mpeg">
 </audio>
 
-<audio id="musica2" loop>
-    <source src="musica2.mp3" type="audio/mpeg">
-</audio>
+<div class="container">
+
+<div class="top-image">
+    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf" alt="Anillos">
+</div>
+
+<div class="floral">
+    <img src="https://png.pngtree.com/png-clipart/20230418/original/pngtree-floral-wedding-frame-decoration-png-image_9061833.png">
+</div>
+
+<div class="names">
+Julio César<br>&<br>Yolanda
+</div>
+
+<div class="date-section">
+    <div class="day">SÁBADO</div>
+    <div class="big-number">6</div>
+    <div class="month">JUNIO 2026</div>
+</div>
+
+<div class="message">
+Nos casamos…<br>
+Y queremos que lo celebres con nosotros.<br><br>
+A veces creemos que ciertos caminos no son para nosotros,  
+hasta que la vida nos muestra que siempre estuvieron destinados a encontrarse.
+</div>
+
+<div class="section">
+    <h2>Ceremonia Religiosa</h2>
+    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqUsrsOxsSP8Ov_l2Ropyi93gbiT0wAq_udgx8oz_HB64QHNYsLSDZEqK9JXM4UOPcaWSQl4IM0coueBUdMk8W4pHX4uGUQEvRDOpFYaip0JAvvf67rwXVHY-LWEXIQHT9VytEevQ=w408-h544-k-no">
+    <p>5:00 PM</p>
+    <p>Iglesia de Santiago<br>
+    16 de Septiembre 835, Barrio de Santiago,<br>
+    San Luis Potosí, S.L.P.</p>
+    <a class="button" href="https://maps.app.goo.gl/jHfZXRj7AtZLhR3e7" target="_blank">Ver en Google Maps</a>
+</div>
+
+<div class="section">
+    <h2>Recepción</h2>
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+    <p>6:00 PM</p>
+    <p>Salón La Antigua<br>
+    Zacatecas - San Luis Potosí 105,<br>
+    San Ángel 1ra Secc,<br>
+    San Luis Potosí, S.L.P.</p>
+    <a class="button" href="https://maps.app.goo.gl/LCTaPW8daMZmoBxU7" target="_blank">Ver en Google Maps</a>
+</div>
+
+<div class="confirm">
+    <h2>Confirmación</h2>
+    <p>Tu invitación es para 4 adultos</p>
+    <button onclick="confirmar(4)">Confirmar asistencia</button>
+    <button onclick="confirmar(2)">Confirmar menos invitados</button>
+    <button onclick="noAsistir()">No podré asistir</button>
+</div>
+
+</div>
 
 <script>
 
 function abrirInvitacion(){
-    document.getElementById("inicio").style.display="none";
-    document.getElementById("invitacion").style.display="block";
-
-    const musica=document.getElementById("musica");
-    musica.volume=0.7;
-    musica.play().catch(e=>console.log("Autoplay bloqueado"));
+    document.getElementById("cover").style.display="none";
+    document.getElementById("musica").play();
 }
 
-function confirmar(){
-    const nombre=document.getElementById("nombre").value;
-    const mensaje=`Hola Julio y Yolanda, confirmamos 4 personas de la familia ${nombre} para el 6 de junio 💚`;
-    const url=`https://wa.me/524445391211?text=${encodeURIComponent(mensaje)}`;
-    window.open(url,'_blank');
+function confirmar(num){
+    let mensaje = `Hola Julio y Yolanda, confirmamos ${num} adultos para el 6 de junio. 💚`;
+    window.open(`https://wa.me/524445391211?text=${encodeURIComponent(mensaje)}`);
+}
+
+function noAsistir(){
+    let mensaje = `Hola Julio y Yolanda, lamentablemente no podremos asistir el 6 de junio.`;
+    window.open(`https://wa.me/524445391211?text=${encodeURIComponent(mensaje)}`);
 }
 
 </script>
