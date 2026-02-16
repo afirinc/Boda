@@ -3,201 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Julio César & Yolanda</title>
+<title>Nuestra Boda</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+body {
     margin:0;
-    background:#e9e3d7;
-    display:flex;
-    justify-content:center;
-    font-family:'Cormorant Garamond', serif;
-}
-
-.card{
-    background:#fdfaf4;
-    max-width:600px;
-    width:100%;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
-    padding:0 25px 50px 25px;
-    position:relative;
-}
-
-/* Imagen superior */
-.top-image img{
-    width:100%;
-}
-
-/* Marco floral */
-.floral-top,
-.floral-bottom{
-    width:100%;
-    margin:20px 0;
-}
-
-.floral-top img,
-.floral-bottom img{
-    width:100%;
-}
-
-/* Nombres */
-.names{
-    font-family:'Great Vibes', cursive;
-    font-size:3.5em;
-    margin:20px 0;
-}
-
-/* Fecha */
-.date-section{
+    font-family:'Poppins', sans-serif;
+    background:#f9f9f9;
+    color:#333;
     text-align:center;
-    margin:30px 0;
 }
 
-.day{
-    font-family:'Playfair Display', serif;
-    letter-spacing:3px;
-}
-
-.big-number{
-    font-family:'Playfair Display', serif;
-    font-size:5em;
-    margin:10px 0;
-}
-
-.month{
-    font-family:'Playfair Display', serif;
-    letter-spacing:3px;
-}
-
-/* Texto */
-.message{
-    margin:30px 0;
-    line-height:1.7;
-}
-
-/* Secciones */
-.section{
-    margin:40px 0;
-}
-
-.section img{
-    width:100%;
-    border-radius:8px;
-    margin:15px 0;
-}
-
-.button{
-    display:inline-block;
-    margin-top:10px;
-    padding:10px 25px;
-    background:#7a9477;
-    color:white;
-    text-decoration:none;
-    border-radius:30px;
-}
-
-/* Portada */
-.cover{
-    position:fixed;
-    width:100%;
+#inicio {
     height:100vh;
-    background:#fdfaf4;
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    z-index:999;
+    background:white;
 }
 
-.cover h1{
-    font-family:'Great Vibes', cursive;
-    font-size:3em;
-}
-
-.cover button{
-    margin-top:20px;
-    padding:12px 25px;
+.boton-abrir {
+    padding:15px 40px;
+    font-size:18px;
     border:none;
-    border-radius:30px;
-    background:#6b8e6b;
+    background:#2e7d32;
     color:white;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+#invitacion {
+    display:none;
+    padding:40px 20px;
+    background:white;
+    position:relative;
+}
+
+/* Enredaderas suaves */
+.enredadera-top {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    opacity:0.1;
+}
+
+.enredadera-bottom {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:100%;
+    opacity:0.1;
+}
+
+h1 {
+    font-family:'Playfair Display', serif;
+    font-size:40px;
+}
+
+.fecha {
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.seccion {
+    margin:50px 0;
+}
+
+.imagen {
+    width:80%;
+    max-width:400px;
+    border-radius:20px;
+    margin:20px 0;
+}
+
+.confirmacion {
+    margin-top:40px;
+}
+
+input, button {
+    padding:10px;
+    margin:10px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.boton-confirmar {
+    background:#2e7d32;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.familia-box {
+    background:#f1f8f4;
+    padding:15px;
+    border-radius:15px;
+    margin-bottom:30px;
 }
 
 </style>
 </head>
-
 <body>
 
-<div class="cover" id="cover">
-    <h1>Julio César & Yolanda</h1>
-    <button onclick="abrirInvitacion()">Abrir Invitación</button>
+<div id="inicio">
+    <h1>Nuestra Boda</h1>
+    <button class="boton-abrir" onclick="abrirInvitacion()">Abrir Invitación</button>
 </div>
 
-<audio id="musica" loop>
-    <source src="Romance.mp3" type="audio/mpeg">
-</audio>
+<div id="invitacion">
 
-<div class="card">
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="enredadera-top">
+    <img src="https://images.unsplash.com/photo-1493244040629-496f6d136cc3" class="enredadera-bottom">
 
-<div class="top-image">
-    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
-</div>
+    <h1>Julio & Yolanda</h1>
+    <div class="fecha">6 de Junio 2026</div>
 
-<div class="floral-top">
-    <img src="https://png.pngtree.com/png-clipart/20230418/original/pngtree-floral-wedding-frame-decoration-png-image_9061833.png">
-</div>
+    <div id="datosFamilia"></div>
 
-<div class="names">
-Julio César<br>&<br>Yolanda
-</div>
+    <div class="seccion">
+        <h2>Ceremonia</h2>
+        <p>Iglesia de Santiago</p>
+        <img class="imagen" src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
+    </div>
 
-<div class="date-section">
-    <div class="day">SÁBADO</div>
-    <div class="big-number">6</div>
-    <div class="month">JUNIO 2026</div>
-</div>
+    <div class="seccion">
+        <h2>Recepción</h2>
+        <p>La Antigua</p>
+        <img class="imagen" src="https://images.unsplash.com/photo-1519741497674-611481863552">
+    </div>
 
-<div class="message">
-Nos casamos…<br>
-Y queremos que lo celebres con nosotros.
-<br><br>
-Te esperamos en la Iglesia de Santiago a las 5:00 PM  
-y posteriormente en el Salón La Antigua a las 6:00 PM.
-</div>
-
-<div class="section">
-    <h2>Ceremonia Religiosa</h2>
-    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqUsrsOxsSP8Ov_l2Ropyi93gbiT0wAq_udgx8oz_HB64QHNYsLSDZEqK9JXM4UOPcaWSQl4IM0coueBUdMk8W4pHX4uGUQEvRDOpFYaip0JAvvf67rwXVHY-LWEXIQHT9VytEevQ=w408-h544-k-no">
-    <p>5:00 PM</p>
-    <p>16 de Septiembre 835, Barrio de Santiago,<br>
-    San Luis Potosí, S.L.P.</p>
-    <a class="button" href="https://maps.app.goo.gl/jHfZXRj7AtZLhR3e7" target="_blank">Ver en Google Maps</a>
-</div>
-
-<div class="section">
-    <h2>Recepción</h2>
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-    <p>6:00 PM</p>
-    <p>Zacatecas - San Luis Potosí 105,<br>
-    San Ángel 1ra Secc,<br>
-    San Luis Potosí, S.L.P.</p>
-    <a class="button" href="https://maps.app.goo.gl/LCTaPW8daMZmoBxU7" target="_blank">Ver en Google Maps</a>
-</div>
-
-<div class="floral-bottom">
-    <img src="https://png.pngtree.com/png-clipart/20230418/original/pngtree-floral-wedding-frame-decoration-png-image_9061833.png">
-</div>
+    <div class="confirmacion">
+        <h2>Confirmar Asistencia</h2>
+        <input type="number" id="cantidad" placeholder="¿Cuántas personas?" min="1">
+        <br>
+        <button class="boton-confirmar" onclick="confirmar()">Confirmar por WhatsApp</button>
+    </div>
 
 </div>
+
+<audio id="musica" src="musica1.mp3"></audio>
 
 <script>
-function abrirInvitacion(){
-    document.getElementById("cover").style.display="none";
+
+function abrirInvitacion() {
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("invitacion").style.display = "block";
     document.getElementById("musica").play();
 }
+
+/* Leer parámetros del link */
+const params = new URLSearchParams(window.location.search);
+const familia = params.get("familia");
+const lado = params.get("lado");
+const max = params.get("max");
+
+if(familia && max){
+    document.getElementById("datosFamilia").innerHTML = `
+        <div class="familia-box">
+            <h3>Familia ${familia}</h3>
+            <p>Tienen ${max} lugares reservados</p>
+        </div>
+    `;
+}
+
+function confirmar(){
+
+    const cantidad = document.getElementById("cantidad").value;
+
+    if(!cantidad){
+        alert("Por favor ingresa cantidad");
+        return;
+    }
+
+    if(max && cantidad > max){
+        alert("Solo pueden confirmar hasta " + max + " personas");
+        return;
+    }
+
+    const numero = "524445391211"; // TU NUMERO CON LADA 52
+    const mensaje = `Hola, confirmamos ${cantidad} personas de la familia ${familia} para el 6 de Junio 💚`;
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
+}
+
 </script>
 
 </body>
