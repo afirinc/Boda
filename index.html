@@ -1,276 +1,272 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Julio César & Yolanda</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet" />
 
 <style>
-
-body{
-    margin:0;
-    background:#e9e3d7;
-    display:flex;
-    justify-content:center;
-    font-family:'Cormorant Garamond', serif;
+body {
+  margin: 0;
+  background: #e9e3d7;
+  display: flex;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-.card{
-    background:#fdfaf4;
-    max-width:600px;
-    width:100%;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
-    padding:0 25px 50px 25px;
-    position:relative;
+.card {
+  background: #fdfaf4;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 0 25px 50px 25px;
+  position: relative;
 }
 
-.top-image img{
-    width:100%;
+.top-image img {
+  width: 100%;
 }
 
 .floral-top,
-.floral-bottom{
-    width:100%;
-    margin:20px 0;
+.floral-bottom {
+  width: 100%;
+  margin: 20px 0;
 }
 
 .floral-top img,
-.floral-bottom img{
-    width:100%;
+.floral-bottom img {
+  width: 100%;
 }
 
-.names{
-    font-family:'Great Vibes', cursive;
-    font-size:3.5em;
-    margin:20px 0;
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5em;
+  margin: 20px 0;
 }
 
-.date-section{
-    text-align:center;
-    margin:30px 0;
+.date-section {
+  text-align: center;
+  margin: 30px 0;
 }
 
-.day{
-    font-family:'Playfair Display', serif;
-    letter-spacing:3px;
+.day {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 3px;
 }
 
-.big-number{
-    font-family:'Playfair Display', serif;
-    font-size:5em;
-    margin:10px 0;
+.big-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 5em;
+  margin: 10px 0;
 }
 
-.month{
-    font-family:'Playfair Display', serif;
-    letter-spacing:3px;
+.month {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 3px;
 }
 
-.message{
-    margin:30px 0;
-    line-height:1.7;
+.message {
+  margin: 30px 0;
+  line-height: 1.7;
 }
 
-.section{
-    margin:40px 0;
+.section {
+  margin: 40px 0;
 }
 
-.section img{
-    width:100%;
-    border-radius:8px;
-    margin:15px 0;
+.section img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 15px 0;
 }
 
-.button{
-    display:inline-block;
-    margin-top:10px;
-    padding:10px 25px;
-    background:#7a9477;
-    color:white;
-    text-decoration:none;
-    border-radius:30px;
-    border:none;
-    cursor:pointer;
+.button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 25px;
+  background: #7a9477;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
 }
 
 /* NUEVO estilo input confirmación */
-.confirmacion input{
-    padding:10px;
-    margin-top:10px;
-    border-radius:20px;
-    border:1px solid #ccc;
-    width:80%;
-    max-width:250px;
-    text-align:center;
-    font-family:'Cormorant Garamond', serif;
+.confirmacion input {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  width: 80%;
+  max-width: 250px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-.cover{
-    position:fixed;
-    width:100%;
-    height:100vh;
-    background:#fdfaf4; /* fondo marfil elegante */
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    z-index:999;
-    text-align:center;
-    overflow:hidden;
+/* === Portada con invitación estilo tarjeta === */
+
+.cover {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #fdfaf4; /* fondo marfil suave */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
 }
 
-/* Imagen decorativa centrada */
-.cover::before{
-    content:"";
-    position:absolute;
-    width:90%;
-    max-width:500px; /* tamaño elegante en PC */
-    height:90%;
-    max-height:700px;
-    background-image:url('https://img.freepik.com/vector-gratis/hojas-diseno-acuarela-marco-dorado_23-2148536363.jpg');
-    background-size:contain; /* no se deforma */
-    background-repeat:no-repeat;
-    background-position:center;
-    opacity:0.95;
+.cover-content {
+  position: relative;
+  width: 320px;
+  height: 480px;
+  background: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  background-image: url('https://img.freepik.com/vector-gratis/hojas-diseno-acuarela-marco-dorado_23-2148536363.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-/* Para que el texto quede encima */
-.cover h1,
-.cover button{
-    position:relative;
-    z-index:2;
+.cover-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  color: #a3916e;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
 }
 
-.cover h1{
-    font-family:'Great Vibes', cursive;
-    font-size:3.2em;
-    color:#6b5b3e;
-    margin-bottom:20px;
+.cover-content h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  color: #8b6e34;
+  margin: 0 0 24px 0;
 }
 
-.cover button{
-    padding:12px 30px;
-    border:none;
-    border-radius:30px;
-    background:#6b8e6b;
-    color:white;
-    cursor:pointer;
+.cover-content button {
+  margin-top: auto;
+  padding: 12px 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  background: #7a9477;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
-
+/* Para que no aparezca scroll cuando la portada está visible */
+body.cover-open {
+  overflow: hidden;
 }
-
-.cover h1{
-    font-family:'Great Vibes', cursive;
-    font-size:3em;
-}
-
-.cover button{
-    margin-top:20px;
-    padding:12px 25px;
-    border:none;
-    border-radius:30px;
-    background:#6b8e6b;
-    color:white;
-}
-
 </style>
 </head>
 
-<body>
+<body class="cover-open">
 
 <div class="cover" id="cover">
-    <h1>Julio César & Yolanda</h1>
+  <div class="cover-content">
+    <h2>Te invitamos a</h2>
+    <h1>Julio César &amp; Yolanda</h1>
+    <h2>Sábado 6 Junio 2026</h2>
     <button onclick="abrirInvitacion()">Abrir Invitación</button>
+  </div>
 </div>
 
 <audio id="musica" loop>
-    <source src="Romance.mp3" type="audio/mpeg">
+  <source src="Romance.mp3" type="audio/mpeg" />
 </audio>
 
 <div class="card">
 
-<div class="top-image">
-    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
-</div>
+  <div class="top-image">
+    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf" />
+  </div>
 
-<div class="floral-top">
-    <img src="https://png.pngtree.com/png-clipart/20230418/original/pngtree-floral-wedding-frame-decoration-png-image_9061833.png">
-</div>
+  <div class="floral-top">
+    <img src="https://png.pngtree.com/png-clipart/20230418/original/pngtree-floral-wedding-frame-decoration-png-image_9061833.png" />
+  </div>
 
-<div class="names">
-Julio César<br>&<br>Yolanda
-</div>
+  <div class="names">
+    Julio César<br />&<br />Yolanda
+  </div>
 
-<div class="date-section">
+  <div class="date-section">
     <div class="day">SÁBADO</div>
     <div class="big-number">6</div>
     <div class="month">JUNIO 2026</div>
-</div>
+  </div>
 
-<div class="message">
-Nos casamos…<br>
-Y queremos que lo celebres con nosotros.
-<br><br>
-Te esperamos en la Iglesia de Santiago a las 5:00 PM  
-y posteriormente en el Salón La Antigua a las 6:00 PM.
-</div>
+  <div class="message">
+    Nos casamos…<br />
+    Y queremos que lo celebres con nosotros.
+    <br /><br />
+    Te esperamos en la Iglesia de Santiago a las 5:00 PM y posteriormente en el Salón La Antigua a las 6:00 PM.
+  </div>
 
-<div class="section">
+  <div class="section">
     <h2>Ceremonia Religiosa</h2>
-    <img src="https://www.caminosdepasion.com/wp-content/uploads/iglesia-de-santiago-ecija.jpg">
+    <img src="https://www.caminosdepasion.com/wp-content/uploads/iglesia-de-santiago-ecija.jpg" />
     <p>5:00 PM</p>
-    <p>16 de Septiembre 835, Barrio de Santiago,<br>
-    San Luis Potosí, S.L.P.</p>
+    <p>16 de Septiembre 835, Barrio de Santiago,<br />San Luis Potosí, S.L.P.</p>
     <a class="button" href="https://maps.app.goo.gl/jHfZXRj7AtZLhR3e7" target="_blank">Ver en Google Maps</a>
-</div>
+  </div>
 
-<div class="section">
+  <div class="section">
     <h2>Recepción</h2>
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552" />
     <p>6:00 PM</p>
-    <p>Zacatecas - San Luis Potosí 105,<br>
-    San Ángel 1ra Secc,<br>
-    San Luis Potosí, S.L.P.</p>
+    <p>Zacatecas - San Luis Potosí 105,<br />San Ángel 1ra Secc,<br />San Luis Potosí, S.L.P.</p>
     <a class="button" href="https://maps.app.goo.gl/LCTaPW8daMZmoBxU7" target="_blank">Ver en Google Maps</a>
-</div>
+  </div>
 
-<!-- NUEVA SECCIÓN CONFIRMACIÓN -->
-<div class="section confirmacion">
+  <!-- NUEVA SECCIÓN CONFIRMACIÓN -->
+  <div class="section confirmacion">
     <h2>Confirmar Asistencia</h2>
     <p>Por favor indícanos cuántas personas asistirán</p>
-    <input type="number" id="cantidad" placeholder="Cantidad de personas" min="1">
-    <br>
+    <input type="number" id="cantidad" placeholder="Cantidad de personas" min="1" />
+    <br />
     <button class="button" onclick="confirmarAsistencia()">Confirmar por WhatsApp</button>
-</div>
+  </div>
 
-<div class="floral-bottom">
-    <img src="https://png.pngtree.com/png-clipart/20230418/original/pngtree-floral-wedding-frame-decoration-png-image_9061833.png">
-</div>
-
+  <div class="floral-bottom">
+    <img src="https://png.pngtree.com/png-clipart/20230418/original/pngtree-floral-wedding-frame-decoration-png-image_9061833.png" />
+  </div>
 </div>
 
 <script>
-function abrirInvitacion(){
-    document.getElementById("cover").style.display="none";
-    document.getElementById("musica").play();
+function abrirInvitacion() {
+  document.getElementById('cover').style.display = 'none';
+  document.body.classList.remove('cover-open');
+  document.getElementById('musica').play();
 }
 
-function confirmarAsistencia(){
-    const cantidad = document.getElementById("cantidad").value;
+function confirmarAsistencia() {
+  const cantidad = document.getElementById('cantidad').value;
 
-    if(!cantidad){
-        alert("Por favor indica cuántas personas asistirán");
-        return;
-    }
+  if (!cantidad) {
+    alert('Por favor indica cuántas personas asistirán');
+    return;
+  }
 
-    const numero = "524445391211"; // CAMBIA POR TU NÚMERO
-    const mensaje = `Hola, confirmamos ${cantidad} persona(s) para la boda de Julio César & Yolanda el 6 de Junio 2026`;
+  const numero = '524445391211'; // CAMBIA POR TU NÚMERO
+  const mensaje = `Hola, confirmamos ${cantidad} persona(s) para la boda de Julio César & Yolanda el 6 de Junio 2026`;
 
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-    window.open(url, "_blank");
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+  window.open(url, '_blank');
 }
 </script>
 
