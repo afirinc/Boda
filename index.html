@@ -121,9 +121,9 @@ body {
 
 .cover-content {
   position: relative;
-  width: 90vw;          /* Ocupa 90% del ancho en móviles */
-  max-width: 600px;     /* Pero máximo 600px en escritorio */
-  aspect-ratio: 2 / 3;  /* Mantiene proporción vertical 2:3 */
+  width: 90vw;
+  max-width: 600px;
+  aspect-ratio: 2 / 3;
   background: white;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
@@ -131,13 +131,26 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 40px 30px;
   box-sizing: border-box;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Great Vibes', cursive;
+  color: #9b7f38;  /* tono dorado */
+  font-size: 2.8rem;
+  line-height: 1.1;
+  user-select: none;
+  white-space: nowrap;
+  text-shadow: 0 0 5px rgba(0,0,0,0.05);
 }
 
 
