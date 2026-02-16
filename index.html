@@ -3,231 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Julio Cesar & Yolanda | Nuestra Boda</title>
+<title>Nuestra Boda</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+body {
     margin:0;
-    font-family:'Montserrat',sans-serif;
-    background:#f6f6f4;
-    color:#3e4a3f;
-    overflow-x:hidden;
+    font-family:'Poppins', sans-serif;
+    background:#f9f9f9;
+    color:#333;
+    text-align:center;
 }
 
-/* PORTADA */
-.cover{
-    position:fixed;
-    width:100%;
+#inicio {
     height:100vh;
-    background:
-    linear-gradient(rgba(246,246,244,0.92),rgba(246,246,244,0.92)),
-    url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6") center/cover no-repeat;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
-    z-index:1000;
-    transition:1s ease;
+    flex-direction:column;
+    background:white;
 }
 
-.cover h1{
-    font-family:'Great Vibes',cursive;
-    font-size:3em;
-    margin:0;
-}
-
-.cover p{
-    letter-spacing:3px;
-    margin-top:15px;
-}
-
-.btn{
-    margin-top:30px;
-    padding:14px 35px;
-    border-radius:30px;
+.boton-abrir {
+    padding:15px 40px;
+    font-size:18px;
     border:none;
-    background:#6b8e6b;
+    background:#2e7d32;
     color:white;
+    border-radius:30px;
     cursor:pointer;
-    font-size:1em;
-    transition:.3s;
 }
 
-.btn:hover{
-    background:#4f6f4f;
-}
-
-.content{
+#invitacion {
     display:none;
-    animation:fadeIn 1.2s ease forwards;
-}
-
-@keyframes fadeIn{
-    from{opacity:0}
-    to{opacity:1}
-}
-
-/* SECCIONES */
-.seccion{
-    padding:80px 20px;
-    text-align:center;
-}
-
-.frase{
-    background:#d9ded8;
     padding:40px 20px;
-    font-family:'Playfair Display',serif;
-    font-style:italic;
-    font-size:1.1em;
+    background:white;
+    position:relative;
 }
 
-.titulo-seccion{
-    font-family:'Great Vibes',cursive;
-    font-size:2.5em;
-    margin-top:40px;
+/* Enredaderas suaves */
+.enredadera-top {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    opacity:0.1;
 }
 
-.lugar{
-    letter-spacing:3px;
-    font-size:.9em;
+.enredadera-bottom {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:100%;
+    opacity:0.1;
+}
+
+h1 {
+    font-family:'Playfair Display', serif;
+    font-size:40px;
+}
+
+.fecha {
+    font-size:20px;
     margin-bottom:30px;
 }
 
-.imagen-lugar{
-    width:90%;
-    max-width:500px;
+.seccion {
+    margin:50px 0;
+}
+
+.imagen {
+    width:80%;
+    max-width:400px;
+    border-radius:20px;
+    margin:20px 0;
+}
+
+.confirmacion {
+    margin-top:40px;
+}
+
+input, button {
+    padding:10px;
+    margin:10px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.boton-confirmar {
+    background:#2e7d32;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.familia-box {
+    background:#f1f8f4;
+    padding:15px;
     border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-.direccion{
-    margin-top:25px;
-    line-height:1.6;
-}
-
-.hora{
-    margin-top:10px;
-    font-weight:bold;
-}
-
-.countdown{
-    font-size:1.3em;
-    margin-top:20px;
-}
-
-audio{ display:none; }
-
-@media(max-width:600px){
-    .cover h1{ font-size:2.2em; }
+    margin-bottom:30px;
 }
 
 </style>
 </head>
-
 <body>
 
-<audio id="musica" loop>
-<source src="Romance.mp3" type="audio/mpeg">
-</audio>
-
-<!-- PORTADA -->
-<div class="cover" id="cover">
-    <h1>Julio Cesar<br>&<br>Yolanda</h1>
-    <p>06 • 06 • 2026</p>
-    <button class="btn" onclick="abrirInvitacion()">Abrir Invitación</button>
+<div id="inicio">
+    <h1>Nuestra Boda</h1>
+    <button class="boton-abrir" onclick="abrirInvitacion()">Abrir Invitación</button>
 </div>
 
-<!-- CONTENIDO -->
-<div class="content" id="contenido">
+<div id="invitacion">
 
-<section class="seccion">
-    <h2>Cuenta Regresiva</h2>
-    <div id="countdown" class="countdown"></div>
-</section>
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="enredadera-top">
+    <img src="https://images.unsplash.com/photo-1493244040629-496f6d136cc3" class="enredadera-bottom">
 
-<section class="seccion">
-    <div class="frase">
-        Queremos que seas testigo de nuestro amor acompañándonos
-        en este día tan especial
+    <h1>Julio & Yolanda</h1>
+    <div class="fecha">6 de Junio 2026</div>
+
+    <div id="datosFamilia"></div>
+
+    <div class="seccion">
+        <h2>Ceremonia</h2>
+        <p>Iglesia de Santiago</p>
+        <img class="imagen" src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
     </div>
 
-    <h2 class="titulo-seccion">Ceremonia</h2>
-    <h3 class="lugar">Catedral del Barrio de Santiago</h3>
+    <div class="seccion">
+        <h2>Recepción</h2>
+        <p>La Antigua</p>
+        <img class="imagen" src="https://images.unsplash.com/photo-1519741497674-611481863552">
+    </div>
 
-<img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqUsrsOxsSP8Ov_l2Ropyi93gbiT0wAq_udgx8oz_HB64QHNYsLSDZEqK9JXM4UOPcaWSQl4IM0coueBUdMk8W4pHX4uGUQEvRDOpFYaip0JAvvf67rwXVHY-LWEXIQHT9VytEevQ=w408-h544-k-no"
-     class="imagen-lugar">
-
-    <p class="direccion">
-        16 de Septiembre 835<br>
-        Barrio de Santiago<br>
-        San Luis Potosí, S.L.P.
-    </p>
-
-    <div class="hora">5:00 PM</div>
-
-    <a class="btn"
-       href="https://maps.app.goo.gl/jHfZXRj7AtZLhR3e7"
-       target="_blank">Ver ubicación</a>
-</section>
-
-<section class="seccion">
-    <h2 class="titulo-seccion">Recepción</h2>
-
-    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485"
-         class="imagen-lugar">
-
-    <p class="direccion">
-        Zacatecas - San Luis Potosí 105<br>
-        San Ángel 1ra Secc<br>
-        San Luis Potosí, S.L.P.
-    </p>
-
-    <div class="hora">6:00 PM</div>
-
-    <a class="btn"
-       href="https://maps.app.goo.gl/LCTaPW8daMZmoBxU7"
-       target="_blank">Ver ubicación</a>
-</section>
-
-<section class="seccion">
-    <h2 class="titulo-seccion">Código de Vestimenta</h2>
-    <p>Formal</p>
-    <p>No llevar vestidos color rojo, rosa o blanco.</p>
-</section>
+    <div class="confirmacion">
+        <h2>Confirmar Asistencia</h2>
+        <input type="number" id="cantidad" placeholder="¿Cuántas personas?" min="1">
+        <br>
+        <button class="boton-confirmar" onclick="confirmar()">Confirmar por WhatsApp</button>
+    </div>
 
 </div>
+
+<audio id="musica" src="musica1.mp3"></audio>
 
 <script>
 
-function abrirInvitacion(){
-    document.getElementById("cover").style.opacity="0";
-    setTimeout(()=>{
-        document.getElementById("cover").style.display="none";
-        document.getElementById("contenido").style.display="block";
-    },800);
-
+function abrirInvitacion() {
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("invitacion").style.display = "block";
     document.getElementById("musica").play();
 }
 
-const weddingDate = new Date("June 6, 2026 17:00:00").getTime();
+/* Leer parámetros del link */
+const params = new URLSearchParams(window.location.search);
+const familia = params.get("familia");
+const lado = params.get("lado");
+const max = params.get("max");
 
-setInterval(()=>{
-    const now=new Date().getTime();
-    const distance=weddingDate-now;
+if(familia && max){
+    document.getElementById("datosFamilia").innerHTML = `
+        <div class="familia-box">
+            <h3>Familia ${familia}</h3>
+            <p>Tienen ${max} lugares reservados</p>
+        </div>
+    `;
+}
 
-    const days=Math.floor(distance/(1000*60*60*24));
-    const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-    const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
-    const seconds=Math.floor((distance%(1000*60))/1000);
+function confirmar(){
 
-    document.getElementById("countdown").innerHTML=
-    days+" días "+hours+" hrs "+minutes+" min "+seconds+" seg";
+    const cantidad = document.getElementById("cantidad").value;
 
-},1000);
+    if(!cantidad){
+        alert("Por favor ingresa cantidad");
+        return;
+    }
+
+    if(max && cantidad > max){
+        alert("Solo pueden confirmar hasta " + max + " personas");
+        return;
+    }
+
+    const numero = "524445391211"; // TU NUMERO CON LADA 52
+    const mensaje = `Hola, confirmamos ${cantidad} personas de la familia ${familia} para el 6 de Junio 💚`;
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
+}
 
 </script>
 
