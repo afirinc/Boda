@@ -111,16 +111,36 @@ body{
     position:fixed;
     width:100%;
     height:100vh;
-    background-image:url('https://img.freepik.com/vector-gratis/hojas-diseno-acuarela-marco-dorado_23-2148536363.jpg');
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+    background:#fdfaf4; /* fondo marfil elegante */
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
     z-index:999;
     text-align:center;
+    overflow:hidden;
+}
+
+/* Imagen decorativa centrada */
+.cover::before{
+    content:"";
+    position:absolute;
+    width:90%;
+    max-width:500px; /* tamaño elegante en PC */
+    height:90%;
+    max-height:700px;
+    background-image:url('https://img.freepik.com/vector-gratis/hojas-diseno-acuarela-marco-dorado_23-2148536363.jpg');
+    background-size:contain; /* no se deforma */
+    background-repeat:no-repeat;
+    background-position:center;
+    opacity:0.95;
+}
+
+/* Para que el texto quede encima */
+.cover h1,
+.cover button{
+    position:relative;
+    z-index:2;
 }
 
 .cover h1{
@@ -128,8 +148,17 @@ body{
     font-size:3.2em;
     color:#6b5b3e;
     margin-bottom:20px;
-    text-shadow:0 2px 8px rgba(255,255,255,0.8);
 }
+
+.cover button{
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:#6b8e6b;
+    color:white;
+    cursor:pointer;
+}
+
 
 }
 
