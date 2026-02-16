@@ -121,8 +121,9 @@ body {
 
 .cover-content {
   position: relative;
-  width: 320px;
-  height: 480px;
+  width: 90vw;          /* Ocupa 90% del ancho en móviles */
+  max-width: 600px;     /* Pero máximo 600px en escritorio */
+  aspect-ratio: 2 / 3;  /* Mantiene proporción vertical 2:3 */
   background: white;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
@@ -138,6 +139,7 @@ body {
   box-sizing: border-box;
   text-align: center;
 }
+
 
 .cover-content h2 {
   font-family: 'Cormorant Garamond', serif;
