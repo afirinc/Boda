@@ -145,7 +145,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.25; /* sutil, no tapa el texto */
+  opacity: 0.2; /* más sutil para no distraer */
   z-index: 1;
 }
 
@@ -155,53 +155,91 @@ body {
   max-width: 90%;
 }
 
-.cover-content h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-  color: #a3916e;
-  margin: 0 0 20px;
-  text-transform: uppercase;
+.wreath-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 30px;
+}
+
+.wreath {
+  width: 100%;
+  height: auto;
 }
 
 .cover-content h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: 'Great Vibes', cursive;
-  font-size: 3.8rem; /* ajustado para móvil */
+  font-size: 2.8rem;
   color: #b8975e; /* dorado cálido */
+  margin: 0;
+  line-height: 1.1;
+  text-align: center;
+  width: 80%;
+}
+
+.separator {
+  font-size: 1rem;
+  color: #a3916e;
+  margin: 20px 0;
+}
+
+.cover-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #8b6e34;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cover-message {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: #a3916e;
+  line-height: 1.4;
   margin: 0 0 30px;
-  line-height: 1;
 }
 
 .date-line {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #8b6e34;
-  letter-spacing: 1.5px;
-  margin-bottom: 40px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
 .date-line span {
   font-weight: 600;
 }
 
+.location {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: #a3916e;
+  margin-bottom: 40px;
+}
+
 .cover-content button {
-  padding: 14px 40px;
+  padding: 12px 35px;
   font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  background: #7a9477;
-  color: white;
-  border: none;
-  border-radius: 50px;
+  font-size: 1rem;
+  background: transparent;
+  color: #b8975e;
+  border: 1px solid #b8975e;
+  border-radius: 4px;
   cursor: pointer;
   margin-top: 20px;
-  box-shadow: 0 4px 15px rgba(122,148,119,0.3);
   transition: all 0.3s;
 }
 
 .cover-content button:hover {
-  background: #6a8467;
-  transform: translateY(-2px);
+  background: #b8975e;
+  color: white;
 }
 
 /* Responsive para que no se corte en celular */
@@ -212,10 +250,13 @@ body {
     min-height: 85vh;
   }
   .cover-content h1 {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
   .date-line {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+  .wreath-container {
+    max-width: 250px;
   }
 }
 
@@ -230,15 +271,21 @@ body.cover-open {
 
 <div class="cover" id="cover">
   <div class="cover-content">
-    <!-- Fondo de flores suaves (busqué uno similar al de tu foto) -->
+    <!-- Fondo de flores suaves -->
     <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&q=80" alt="fondo flores" class="background-floral" />
 
     <div class="cover-text-wrapper">
-      <h2>QUIEREN INVITARTE A SU BODA</h2>
-      <h1>Julio César <br>&<br> Yolanda</h1>
-      <div class="date-line">
-        <span>SÁBADO</span> | <span>6</span> | <span>JUNIO</span> <span>2026</span>
+      <div class="wreath-container">
+        <img src="https://img.pngtree.com/png-vector/20190129/ourlarge/pngtree-golden-floral-wreath-png-image_568855.jpg" alt="marco floral dorado" class="wreath" />
+        <h1>Julio César <br>&<br> Yolanda</h1>
       </div>
+      <div class="separator">&mdash; &rarr; &larr; &mdash;</div>
+      <div class="cover-title">QUIEREN INVITARTE A SU BODA</div>
+      <p class="cover-message">Nos complace la idea de que nos acompañes en nuestro día especial, se ruega confirmación.</p>
+      <div class="date-line">
+        <span>SÁB</span> | <span>6</span> | <span>JUN</span> <span>2026</span>
+      </div>
+      <p class="location">Iglesia de Santiago & Salón La Antigua, San Luis Potosí</p>
       <button onclick="abrirInvitacion()">ABRIR INVITACIÓN</button>
     </div>
   </div>
