@@ -110,77 +110,113 @@ body {
 
 .cover {
   position: fixed;
+  inset: 0;
   width: 100vw;
   height: 100vh;
-  background: #fdfaf4; /* fondo marfil suave */
+  background: #f8f5f0; /* beige suave como en la foto */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
+  overflow: hidden;
 }
 
 .cover-content {
   position: relative;
   width: 90vw;
-  max-width: 600px;
-  aspect-ratio: 2 / 3;
-  background: white;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
-  background-image: url('https://img.freepik.com/vector-gratis/hojas-diseno-acuarela-marco-dorado_23-2148536363.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  max-width: 500px; /* más estrecho como una tarjeta real */
+  min-height: 80vh;
+  background: #fffaf5; /* fondo marfil claro */
+  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 40px 30px;
   box-sizing: border-box;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.cover-text {
+.background-floral {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Great Vibes', cursive;
-  color: #9b7f38;  /* tono dorado */
-  font-size: 2.8rem;
-  line-height: 1.1;
-  user-select: none;
-  white-space: nowrap;
-  text-shadow: 0 0 5px rgba(0,0,0,0.05);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25; /* sutil, no tapa el texto */
+  z-index: 1;
 }
 
+.cover-text-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+}
 
 .cover-content h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
   font-weight: 400;
-  letter-spacing: 1.2px;
+  letter-spacing: 2px;
   color: #a3916e;
-  margin: 0 0 12px 0;
+  margin: 0 0 20px;
   text-transform: uppercase;
 }
 
 .cover-content h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.8rem;
+  font-size: 3.8rem; /* ajustado para móvil */
+  color: #b8975e; /* dorado cálido */
+  margin: 0 0 30px;
+  line-height: 1;
+}
+
+.date-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
   color: #8b6e34;
-  margin: 0 0 24px 0;
+  letter-spacing: 1.5px;
+  margin-bottom: 40px;
+}
+
+.date-line span {
+  font-weight: 600;
 }
 
 .cover-content button {
-  margin-top: auto;
-  padding: 12px 28px;
+  padding: 14px 40px;
   font-family: 'Playfair Display', serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   background: #7a9477;
-  border-radius: 30px;
-  border: none;
   color: white;
+  border: none;
+  border-radius: 50px;
   cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(122,148,119,0.3);
+  transition: all 0.3s;
+}
+
+.cover-content button:hover {
+  background: #6a8467;
+  transform: translateY(-2px);
+}
+
+/* Responsive para que no se corte en celular */
+@media (max-width: 480px) {
+  .cover-content {
+    width: 94vw;
+    padding: 30px 20px;
+    min-height: 85vh;
+  }
+  .cover-content h1 {
+    font-size: 3rem;
+  }
+  .date-line {
+    font-size: 1.2rem;
+  }
 }
 
 /* Para que no aparezca scroll cuando la portada está visible */
@@ -194,10 +230,17 @@ body.cover-open {
 
 <div class="cover" id="cover">
   <div class="cover-content">
-    <h2>Te invitamos a</h2>
-    <h1>Julio César &amp; Yolanda</h1>
-    <h2>Sábado 6 Junio 2026</h2>
-    <button onclick="abrirInvitacion()">Abrir Invitación</button>
+    <!-- Fondo de flores suaves (busqué uno similar al de tu foto) -->
+    <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&q=80" alt="fondo flores" class="background-floral" />
+
+    <div class="cover-text-wrapper">
+      <h2>QUIEREN INVITARTE A SU BODA</h2>
+      <h1>Julio César <br>&<br> Yolanda</h1>
+      <div class="date-line">
+        <span>SÁBADO</span> | <span>6</span> | <span>JUNIO</span> <span>2026</span>
+      </div>
+      <button onclick="abrirInvitacion()">ABRIR INVITACIÓN</button>
+    </div>
   </div>
 </div>
 
@@ -280,7 +323,7 @@ function confirmarAsistencia() {
   const numero = '524445391211'; // CAMBIA POR TU NÚMERO
   const mensaje = `Hola, confirmamos ${cantidad} persona(s) para la boda de Julio César & Yolanda el 6 de Junio 2026`;
 
-  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+  const url = `https://wa.me/\( {numero}?text= \){encodeURIComponent(mensaje)}`;
   window.open(url, '_blank');
 }
 </script>
