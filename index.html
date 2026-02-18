@@ -185,6 +185,35 @@ footer{
   .hero h1{font-size:36px;}
   .hero h3{font-size:20px;}
 }
+  /* =========================
+   DECORACIÓN FLORAL
+========================= */
+
+.floral{
+  position:absolute;
+  width:250px;
+  opacity:0.20;
+  pointer-events:none;
+}
+
+.floral-top{
+  top:40px;
+  left:40px;
+}
+
+.floral-bottom{
+  bottom:40px;
+  right:40px;
+  transform:rotate(180deg);
+}
+
+@media(max-width:768px){
+  .floral{
+    width:160px;
+    opacity:0.15;
+  }
+}
+
 </style>
 </head>
 
@@ -196,7 +225,12 @@ footer{
 </audio>
 
 <!-- PORTADA -->
+  
 <div class="cover" id="cover">
+   <!-- DECORACIONES -->
+  <img src="https://png.pngtree.com/png-clipart/20210912/original/pngtree-hand-draw-flower-branch-png-image_6709122.jpg" class="floral floral-top">
+  <img src="https://png.pngtree.com/png-clipart/20210912/original/pngtree-hand-draw-flower-branch-png-image_6709122.jpg" class="floral floral-bottom">
+
   <h2>Julio Cesar & Yolanda</h2>
   <p id="guest"></p>
   <p id="tickets"></p>
