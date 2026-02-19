@@ -344,11 +344,43 @@ if(fname){
 if(boletos){
   document.getElementById("tickets").innerHTML=boletos;
 }
-if(fname){
-  document.getElementById("rsvpBtn").href=
-    "https://wa.me/5214445391211?text=Confirmo asistencia a la boda. Soy "+fname+" "+(lname||"")+" y vengo con "+(boletos||"")+"";
-}
 
+if(boletos){
+
+  const select = document.getElementById("asistentes");
+  const max = parseInt(boletos);
+
+  for(let i=0; i<=max; i++){
+    const option = document.createElement("option");
+    option.value = i;
+
+    if(i === 0){
+      option.text = "No asistiremos";
+    } else {
+      option.text = i + " asistente(s)";
+    }
+
+    select.appendChild(option);
+  }
+
+  document.getElementById("rsvpBtn").addEventListener("click", function(){
+
+    const cantidad = select.value;
+    const nombreCompleto = fname + " " + (lname||"");
+
+    let mensaje;
+
+    if(cantidad == 0){
+      mensaje = "Hola, somos " + nombreCompleto + " y lamentablemente no podremos asistir.";
+    } else {
+      mensaje = "Hola, somos " + nombreCompleto + " y confirmamos " + cantidad + " asistente(s).";
+    }
+
+    this.href = "https://wa.me/5214445391211?text=" + encodeURIComponent(mensaje);
+
+  });
+
+}
 // COUNTDOWN
 const weddingDate=new Date("June 6, 2026 17:00:00").getTime();
 setInterval(function(){
