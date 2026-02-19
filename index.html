@@ -170,6 +170,22 @@ body{
   border-radius:15px;
   object-fit:cover;
 }
+  @media(max-width:768px){
+
+  .gallery{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    gap:15px;
+    padding-bottom:10px;
+  }
+
+  .gallery img{
+    min-width:85%;
+    scroll-snap-align:center;
+  }
+
+  }
 
 /* Footer */
 footer{
