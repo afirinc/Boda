@@ -113,15 +113,21 @@ body{
 .button:hover{background:var(--secondary)}
 
 /* Countdown */
+
 .countdown {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 40px;
   flex-wrap: wrap;
-  position: relative;
-  padding: 80px 20px;
-  background: url('Fondocontador.png') center/cover no-repeat;
+
+  /* Fondo corregido */
+  background-image: url('Fondocontador.png');
+  background-size: contain;      /* ← aquí está el cambio importante */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 100px 20px; /* ajusta si quieres más o menos espacio */
 }
 .countdown div{
   background:white;
