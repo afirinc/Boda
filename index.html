@@ -36,6 +36,31 @@ body{
   opacity:1;
   transform:translateY(0);
 }
+.text-hero {
+  position: relative;
+  display: inline-block;
+}
+
+.marco-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.text-hero h2 {
+  position: relative;
+  z-index: 2;
+  color: var(--primary);
+  text-align: center;
+  margin: 0;
+  padding: 0 20px;
+}
+  /*otro/
   .prueba-corner{
   position: absolute;    /* se posiciona sobre la portada */
   bottom: 20px;          /* distancia desde abajo */
@@ -256,7 +281,10 @@ footer{
   <img src="https://png.pngtree.com/png-clipart/20210912/original/pngtree-hand-draw-flower-branch-png-image_6709122.jpg" class="floral floral-top">
   <img src="https://png.pngtree.com/png-clipart/20210912/original/pngtree-hand-draw-flower-branch-png-image_6709122.jpg" class="floral floral-bottom">
 
+<div class="text-hero">
+  <img src="Marco.png" class="marco-texto" alt="Marco decorativo">
   <h2>Julio Cesar & Yolanda</h2>
+</div>
   <p id="guest"></p>
   <p id="tickets"></p>
   <button class="open-btn" onclick="openInvite()">Abrir invitación</button>
