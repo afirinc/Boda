@@ -36,6 +36,15 @@ body{
   opacity:1;
   transform:translateY(0);
 }
+  .prueba-corner{
+  position: absolute;    /* se posiciona sobre la portada */
+  bottom: 20px;          /* distancia desde abajo */
+  right: 20px;           /* distancia desde la derecha */
+  width: 150px;          /* tamaño de la imagen */
+  opacity: 0.9;          /* un poco transparente */
+  pointer-events: none;  /* no interfiere con botones */
+  z-index: 10000;        /* encima de todo */
+}
 
 /* PORTADA */
 .cover{
@@ -251,6 +260,7 @@ footer{
   <p id="guest"></p>
   <p id="tickets"></p>
   <button class="open-btn" onclick="openInvite()">Abrir invitación</button>
+   <img src="prueba.png" class="prueba-corner">
 </div>
 
 <!-- HERO -->
