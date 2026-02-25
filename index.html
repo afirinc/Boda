@@ -49,6 +49,25 @@ body{
 }
 
 /* PORTADA */
+  /* === MARCO PORTADA === */
+.cover{
+  overflow:hidden;
+}
+
+.cover .marco{
+  position:absolute;
+  width:100vw;
+  height:100vh;
+  object-fit:contain;
+  z-index:1;
+}
+
+.cover h2,
+.cover p,
+.cover .open-btn{
+  position:relative;
+  z-index:2;
+}
 .cover{
   position:fixed;
   inset:0;
@@ -254,14 +273,14 @@ footer{
 <!-- PORTADA -->
   
 <div class="cover" id="cover">
-   <!-- DECORACIONES -->
-  <img src="https://png..." class="floral floral-top">
-  <img src="https://png..." class="floral floral-bottom">
+
+  <img src="Marcoblanco.png" class="marco">
 
   <h2>Julio Cesar & Yolanda</h2>
   <p id="guest"></p>
   <p id="tickets"></p>
   <button class="open-btn" onclick="openInvite()">Abrir invitación</button>
+
 </div>
 
 <!-- HERO -->
@@ -355,7 +374,7 @@ footer{
 <script>
 // ABRIR INVITACION
 function openInvite(){
-  document.getElementById("cover").classList.add("hidden");
+  document.getElementById("cover").style.display = "none";
   document.getElementById("music").play();
 }
 
