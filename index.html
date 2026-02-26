@@ -9,31 +9,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-/* =========================
-   FUENTES
-========================= */
-@font-face {
-  font-family: 'Roman';
-  src: url('RomanSerif.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Cinzel';
-  src: url('Cinzel.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Brittany';
-  src: url('BrittanySignature.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+  @font-face {
+    font-family: 'Roman';
+    src: url('RomanSerif.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
-/* =========================
-   VARIABLES
-========================= */
+  @font-face {
+    font-family: 'Brittany';
+    src: url('BrittanySignature.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 :root{
   --primary:#C17C6D;       
   --secondary:#B07D6D;     
@@ -42,9 +31,7 @@
   --highlight:#D4A5A5;     
 }
 
-/* =========================
-   RESET & BASE
-========================= */
+/* Reset y base */
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
@@ -54,9 +41,7 @@ body{
   overflow-x:hidden;
 }
 
-/* =========================
-   ANIMACIONES
-========================= */
+/* Animaciones */
 .fade{
   opacity:0;
   transform:translateY(40px);
@@ -66,22 +51,20 @@ body{
   opacity:1;
   transform:translateY(0);
 }
+  
+.prueba-corner{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 150px;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 10000;
+}
 
-/* =========================
-   PORTADA
-========================= */
+/* PORTADA */
 .cover{
   overflow:hidden;
-  position:fixed;
-  inset:0;
-  background:var(--soft);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  z-index:9999;
-  transition:1s;
 }
 .cover .marco{
   position:absolute;
@@ -95,6 +78,18 @@ body{
 .cover .open-btn{
   position:relative;
   z-index:2;
+}
+.cover{
+  position:fixed;
+  inset:0;
+  background:var(--soft);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  z-index:9999;
+  transition:1s;
 }
 .cover h2{
   font-family:'Brittany', cursive;
@@ -118,9 +113,7 @@ body{
 }
 .hidden{opacity:0;pointer-events:none;}
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 .hero{
   background:var(--soft);
   min-height:100vh;
@@ -135,11 +128,11 @@ body{
   font-size:56px;
   color:var(--primary);
 }
-.hero h3{
-  font-family:'Roman', serif;
-  letter-spacing:4px;
-  margin-top:10px;
-  color:var(--secondary);
+.hero h3 {
+  font-family: 'Roman', serif;
+  letter-spacing: 4px;
+  margin-top: 10px;
+  color: var(--secondary);
 }
 .date{
   margin-top:20px;
@@ -148,9 +141,7 @@ body{
   color:var(--text);
 }
 
-/* =========================
-   BOTÓN
-========================= */
+/* Botón */
 .button{
   display:inline-block;
   margin-top:25px;
@@ -163,9 +154,7 @@ body{
 }
 .button:hover{background:var(--secondary)}
 
-/* =========================
-   COUNTDOWN
-========================= */
+/* Countdown */
 .countdown{
   display:flex;
   justify-content:center;
@@ -181,22 +170,20 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 .countdown span{
-  font-family:'Cinzel', serif;
+  font-family: 'Roman', serif;
   font-size:24px;
   font-weight:600;
   color:var(--primary);
 }
 
-/* =========================
-   SECCIONES
-========================= */
+/* Secciones */
 .section{
   padding:100px 20px;
   text-align:center;
   background:var(--soft);
 }
 .section-title{
-  font-family:'Cinzel', serif;
+  font-family:'Roman', serif;
   font-size:36px;
   color:var(--primary);
   margin-bottom:40px;
@@ -215,9 +202,7 @@ body{
   color:var(--text);
 }
 
-/* =========================
-   GALERÍA
-========================= */
+/* Galería */
 .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -242,9 +227,7 @@ body{
   }
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* Footer */
 footer{
   padding:40px;
   text-align:center;
@@ -257,26 +240,34 @@ footer{
 @media(max-width:768px){
   .hero h1{font-size:36px;}
   .hero h3{font-size:20px;}
-  .section-title{font-size:28px;}
 }
 
-/* =========================
-   DECORACIÓN FLORAL
-========================= */
+/* DECORACIÓN FLORAL */
 .floral{
   position:absolute;
   width:250px;
   opacity:0.20;
   pointer-events:none;
 }
-.floral-top{top:40px; left:40px;}
-.floral-bottom{bottom:40px; right:40px; transform:rotate(180deg);}
+.floral-top{
+  top:40px;
+  left:40px;
+}
+.floral-bottom{
+  bottom:40px;
+  right:40px;
+  transform:rotate(180deg);
+}
 @media(max-width:768px){
-  .floral{width:160px; opacity:0.15;}
+  .floral{
+    width:160px;
+    opacity:0.15;
+  }
 }
 
 </style>
 </head>
+
 <body>
 
 <!-- MUSICA -->
@@ -286,7 +277,7 @@ footer{
 
 <!-- PORTADA -->
 <div class="cover" id="cover">
-<img src="Marcoblanco2.webp" class="marco">
+  <img src="Marcoblanco2.webp" class="marco">
   <h2>Julio Cesar &<br> Yolanda</h2>
   <p id="guest"></p>
   <p id="tickets"></p>
@@ -365,6 +356,7 @@ footer{
   <h2 class="section-title">Confirmar Asistencia</h2>
   <div class="card">
     <p>Selecciona el número de asistentes</p>
+
     <div style="max-width:300px;margin:auto;display:flex;flex-direction:column;gap:15px;">
       <select id="asistentes" style="padding:10px;border-radius:10px;"></select>
       <a id="rsvpBtn" class="button" target="_blank">Confirmar por WhatsApp</a>
@@ -399,18 +391,20 @@ if(boletos){
 if(boletos){
   const select = document.getElementById("asistentes");
   const max = parseInt(boletos);
+
   for(let i=0; i<=max; i++){
     const option = document.createElement("option");
     option.value = i;
     option.text = i === 0 ? "No asistiremos" : i + " asistente(s)";
     select.appendChild(option);
   }
+
   document.getElementById("rsvpBtn").addEventListener("click", function(){
     const cantidad = select.value;
     const nombreCompleto = fname + " " + (lname||"");
-    let mensaje = cantidad==0 
-      ? "Hola, somos " + nombreCompleto + " y lamentablemente no podremos asistir."
-      : "Hola, somos " + nombreCompleto + " y confirmamos " + cantidad + " asistente(s).";
+    let mensaje = cantidad == 0 ?
+      "Hola, somos " + nombreCompleto + " y lamentablemente no podremos asistir." :
+      "Hola, somos " + nombreCompleto + " y confirmamos " + cantidad + " asistente(s).";
     this.href = "https://wa.me/5214445391211?text=" + encodeURIComponent(mensaje);
   });
 }
