@@ -4,38 +4,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Julio Cesar & Yolanda | Nuestra Boda</title>
-  <link rel="preload" as="image" href="Marcoblanco2.webp">
+<link rel="preload" as="image" href="Marcoblanco2.webp">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-  @font-face {
+/* =========================
+   FUENTES
+========================= */
+@font-face {
   font-family: 'Roman';
   src: url('RomanSerif.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-  @font-face {
+@font-face {
   font-family: 'Cinzel';
   src: url('Cinzel.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
-  @font-face {
+@font-face {
   font-family: 'Brittany';
   src: url('BrittanySignature.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+
+/* =========================
+   VARIABLES
+========================= */
 :root{
-  --primary:#C17C6D;       /* color elegante para boda */
+  --primary:#C17C6D;       
   --secondary:#B07D6D;     
   --soft:#F8F4F0;          
   --text:#333333;          
   --highlight:#D4A5A5;     
 }
 
-/* Reset y base */
+/* =========================
+   RESET & BASE
+========================= */
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
@@ -45,7 +54,9 @@ body{
   overflow-x:hidden;
 }
 
-/* Animaciones */
+/* =========================
+   ANIMACIONES
+========================= */
 .fade{
   opacity:0;
   transform:translateY(40px);
@@ -55,39 +66,12 @@ body{
   opacity:1;
   transform:translateY(0);
 }
-/*prueba*/
-  
-  .prueba-corner{
-  position: absolute;    /* se posiciona sobre la portada */
-  bottom: 20px;          /* distancia desde abajo */
-  left: 20px;           /* distancia desde la derecha */
-  width: 150px;          /* tamaño de la imagen */
-  opacity: 0.9;          /* un poco transparente */
-  pointer-events: none;  /* no interfiere con botones */
-  z-index: 10000;        /* encima de todo */
-}
 
-/* PORTADA */
-  /* === MARCO PORTADA === */
+/* =========================
+   PORTADA
+========================= */
 .cover{
   overflow:hidden;
-}
-
-.cover .marco{
-  position:absolute;
-  width:100vw;
-  height:100vh;
-  object-fit:contain;
-  z-index:1;
-}
-
-.cover h2,
-.cover p,
-.cover .open-btn{
-  position:relative;
-  z-index:2;
-}
-.cover{
   position:fixed;
   inset:0;
   background:var(--soft);
@@ -99,10 +83,22 @@ body{
   z-index:9999;
   transition:1s;
 }
+.cover .marco{
+  position:absolute;
+  width:100vw;
+  height:100vh;
+  object-fit:contain;
+  z-index:1;
+}
+.cover h2,
+.cover p,
+.cover .open-btn{
+  position:relative;
+  z-index:2;
+}
 .cover h2{
   font-family:'Brittany', cursive;
   font-size:32px;
-  
   color:var(--primary);
 }
 .cover p{
@@ -122,7 +118,9 @@ body{
 }
 .hidden{opacity:0;pointer-events:none;}
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero{
   background:var(--soft);
   min-height:100vh;
@@ -137,12 +135,11 @@ body{
   font-size:56px;
   color:var(--primary);
 }
-.hero h3 {
-  font-family: 'Roman', serif;  /* aquí pones la fuente */
-  letter-spacing: 4px;
-  margin-top: 10px;
-  color: var(--secondary);
-
+.hero h3{
+  font-family:'Roman', serif;
+  letter-spacing:4px;
+  margin-top:10px;
+  color:var(--secondary);
 }
 .date{
   margin-top:20px;
@@ -151,7 +148,9 @@ body{
   color:var(--text);
 }
 
-/* Botón */
+/* =========================
+   BOTÓN
+========================= */
 .button{
   display:inline-block;
   margin-top:25px;
@@ -164,7 +163,9 @@ body{
 }
 .button:hover{background:var(--secondary)}
 
-/* Countdown */
+/* =========================
+   COUNTDOWN
+========================= */
 .countdown{
   display:flex;
   justify-content:center;
@@ -180,19 +181,22 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 .countdown span{
+  font-family:'Cinzel', serif;
   font-size:24px;
   font-weight:600;
   color:var(--primary);
 }
 
-/* Secciones */
+/* =========================
+   SECCIONES
+========================= */
 .section{
   padding:100px 20px;
   text-align:center;
   background:var(--soft);
 }
 .section-title{
-  font-family:'Playfair Display',serif;
+  font-family:'Cinzel', serif;
   font-size:36px;
   color:var(--primary);
   margin-bottom:40px;
@@ -211,7 +215,9 @@ body{
   color:var(--text);
 }
 
-/* Galería */
+/* =========================
+   GALERÍA
+========================= */
 .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -222,8 +228,7 @@ body{
   border-radius:15px;
   object-fit:cover;
 }
-  @media(max-width:768px){
-
+@media(max-width:768px){
   .gallery{
     display:flex;
     overflow-x:auto;
@@ -231,15 +236,15 @@ body{
     gap:15px;
     padding-bottom:10px;
   }
-
   .gallery img{
     min-width:85%;
     scroll-snap-align:center;
   }
+}
 
-  }
-
-/* Footer */
+/* =========================
+   FOOTER
+========================= */
 footer{
   padding:40px;
   text-align:center;
@@ -252,39 +257,26 @@ footer{
 @media(max-width:768px){
   .hero h1{font-size:36px;}
   .hero h3{font-size:20px;}
+  .section-title{font-size:28px;}
 }
-  /* =========================
+
+/* =========================
    DECORACIÓN FLORAL
 ========================= */
-
 .floral{
   position:absolute;
   width:250px;
   opacity:0.20;
   pointer-events:none;
 }
-
-.floral-top{
-  top:40px;
-  left:40px;
-}
-
-.floral-bottom{
-  bottom:40px;
-  right:40px;
-  transform:rotate(180deg);
-}
-
+.floral-top{top:40px; left:40px;}
+.floral-bottom{bottom:40px; right:40px; transform:rotate(180deg);}
 @media(max-width:768px){
-  .floral{
-    width:160px;
-    opacity:0.15;
-  }
+  .floral{width:160px; opacity:0.15;}
 }
 
 </style>
 </head>
-
 <body>
 
 <!-- MUSICA -->
@@ -293,14 +285,12 @@ footer{
 </audio>
 
 <!-- PORTADA -->
-  
 <div class="cover" id="cover">
 <img src="Marcoblanco2.webp" class="marco">
   <h2>Julio Cesar &<br> Yolanda</h2>
   <p id="guest"></p>
   <p id="tickets"></p>
   <button class="open-btn" onclick="openInvite()">Abrir invitación</button>
-
 </div>
 
 <!-- HERO -->
@@ -321,7 +311,7 @@ footer{
 
 <!-- CEREMONIA -->
 <section id="ceremonia" class="section fade">
-  <h3 class="section-title">Ceremonia</h3>
+  <h2 class="section-title">Ceremonia</h2>
   <div class="card">
     <p>Iglesia de Santiago</p>
     <p>16 de Septiembre 835, Barrio de Santiago, 78049 San Luis Potosí, S.L.P.</p>
@@ -335,8 +325,8 @@ footer{
   <h2 class="section-title">Recepción</h2>
   <div class="card">
     <p>La Antigua</p>
-    <p>Zacatecas - San Luis Potosi 105, San Angel 1ra Secc, 78120 San Luis Potosí, S.L.P.<p>
-    <p>6:00 PM<p>
+    <p>Zacatecas - San Luis Potosi 105, San Angel 1ra Secc, 78120 San Luis Potosí, S.L.P.</p>
+    <p>6:00 PM</p>
     <a href="https://maps.app.goo.gl/71q3nWXHGXbKt4AdA" target="_blank" class="button">Ver ubicación</a>  
   </div>
 </section>
@@ -346,13 +336,12 @@ footer{
   <h2 class="section-title">Código de Vestimenta</h2>
   <div class="card">
     <p>Formal elegante</p>
-     <p>Evitar colores</p>
-      <p>•Blanco •Rosa •Rojo</p>
+    <p>Evitar colores</p>
+    <p>•Blanco •Rosa •Rojo</p>
   </div>
 </section>
 
 <!-- GALERÍA -->
-
 <section class="section fade">
   <h2 class="section-title">Nuestra Historia</h2>
   <div class="gallery">
@@ -361,7 +350,6 @@ footer{
     <img src="Cesaryyolis2.jpg" alt="Historia 3">
   </div>
 </section>
-
 
 <!-- MESA DE REGALOS -->
 <section class="section fade">
@@ -377,15 +365,10 @@ footer{
   <h2 class="section-title">Confirmar Asistencia</h2>
   <div class="card">
     <p>Selecciona el número de asistentes</p>
-
-<div style="max-width:300px;margin:auto;display:flex;flex-direction:column;gap:15px;">
-  
-  <select id="asistentes" style="padding:10px;border-radius:10px;"></select>
-
-  <a id="rsvpBtn" class="button" target="_blank">
-    Confirmar por WhatsApp
-  </a>
-  
+    <div style="max-width:300px;margin:auto;display:flex;flex-direction:column;gap:15px;">
+      <select id="asistentes" style="padding:10px;border-radius:10px;"></select>
+      <a id="rsvpBtn" class="button" target="_blank">Confirmar por WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -414,41 +397,24 @@ if(boletos){
 }
 
 if(boletos){
-
   const select = document.getElementById("asistentes");
   const max = parseInt(boletos);
-
   for(let i=0; i<=max; i++){
     const option = document.createElement("option");
     option.value = i;
-
-    if(i === 0){
-      option.text = "No asistiremos";
-    } else {
-      option.text = i + " asistente(s)";
-    }
-
+    option.text = i === 0 ? "No asistiremos" : i + " asistente(s)";
     select.appendChild(option);
   }
-
   document.getElementById("rsvpBtn").addEventListener("click", function(){
-
     const cantidad = select.value;
     const nombreCompleto = fname + " " + (lname||"");
-
-    let mensaje;
-
-    if(cantidad == 0){
-      mensaje = "Hola, somos " + nombreCompleto + " y lamentablemente no podremos asistir.";
-    } else {
-      mensaje = "Hola, somos " + nombreCompleto + " y confirmamos " + cantidad + " asistente(s).";
-    }
-
+    let mensaje = cantidad==0 
+      ? "Hola, somos " + nombreCompleto + " y lamentablemente no podremos asistir."
+      : "Hola, somos " + nombreCompleto + " y confirmamos " + cantidad + " asistente(s).";
     this.href = "https://wa.me/5214445391211?text=" + encodeURIComponent(mensaje);
-
   });
-
 }
+
 // COUNTDOWN
 const weddingDate=new Date("June 6, 2026 17:00:00").getTime();
 setInterval(function(){
@@ -474,7 +440,3 @@ faders.forEach(el=>observer.observe(el));
 
 </body>
 </html>
-
-
-
-
