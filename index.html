@@ -4,27 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Julio Cesar & Yolanda | Nuestra Boda</title>
-<link rel="preload" as="image" href="Marcoblanco2.webp">
+  <link rel="preload" as="image" href="Marcoblanco2.webp">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
   @font-face {
-    font-family: 'Roman';
-    src: url('RomanSerif.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
+  font-family: 'Roman';
+  src: url('RomanSerif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
   @font-face {
-    font-family: 'Brittany';
-    src: url('BrittanySignature.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
+  font-family: 'Brittany';
+  src: url('BrittanySignature.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 :root{
-  --primary:#C17C6D;       
+  --primary:#C17C6D;       /* color elegante para boda */
   --secondary:#B07D6D;     
   --soft:#F8F4F0;          
   --text:#333333;          
@@ -66,6 +64,7 @@ body{
 .cover{
   overflow:hidden;
 }
+
 .cover .marco{
   position:absolute;
   width:100vw;
@@ -73,6 +72,7 @@ body{
   object-fit:contain;
   z-index:1;
 }
+
 .cover h2,
 .cover p,
 .cover .open-btn{
@@ -101,7 +101,7 @@ body{
   font-size:15px;
   color:var(--text);
 }
-.open-btn{
+.cover .open-btn{
   margin-top:20px;
   padding:12px 28px;
   border-radius:40px;
@@ -110,6 +110,7 @@ body{
   color:white;
   cursor:pointer;
   font-size:14px;
+  font-family: 'Roman', serif;  /* cambio a Roman */
 }
 .hidden{opacity:0;pointer-events:none;}
 
@@ -151,6 +152,7 @@ body{
   color:white;
   text-decoration:none;
   transition:.3s;
+  font-family: 'Roman', serif;  /* cambio a Roman */
 }
 .button:hover{background:var(--secondary)}
 
@@ -170,10 +172,10 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 .countdown span{
-  font-family: 'Roman', serif;
   font-size:24px;
   font-weight:600;
   color:var(--primary);
+  font-family: 'Roman', serif;  /* cambio a Roman */
 }
 
 /* Secciones */
@@ -183,7 +185,7 @@ body{
   background:var(--soft);
 }
 .section-title{
-  font-family:'Roman', serif;
+  font-family:'Roman', serif;  /* cambio a Roman */
   font-size:36px;
   color:var(--primary);
   margin-bottom:40px;
@@ -221,6 +223,7 @@ body{
     gap:15px;
     padding-bottom:10px;
   }
+
   .gallery img{
     min-width:85%;
     scroll-snap-align:center;
@@ -234,6 +237,7 @@ footer{
   background:var(--soft);
   font-size:14px;
   color:var(--text);
+  font-family: 'Roman', serif;  /* cambio a Roman */
 }
 
 /* Media queries */
@@ -241,23 +245,28 @@ footer{
   .hero h1{font-size:36px;}
   .hero h3{font-size:20px;}
 }
+/* =========================
+   DECORACIÓN FLORAL
+========================= */
 
-/* DECORACIÓN FLORAL */
 .floral{
   position:absolute;
   width:250px;
   opacity:0.20;
   pointer-events:none;
 }
+
 .floral-top{
   top:40px;
   left:40px;
 }
+
 .floral-bottom{
   bottom:40px;
   right:40px;
   transform:rotate(180deg);
 }
+
 @media(max-width:768px){
   .floral{
     width:160px;
@@ -277,7 +286,7 @@ footer{
 
 <!-- PORTADA -->
 <div class="cover" id="cover">
-  <img src="Marcoblanco2.webp" class="marco">
+<img src="Marcoblanco2.webp" class="marco">
   <h2>Julio Cesar &<br> Yolanda</h2>
   <p id="guest"></p>
   <p id="tickets"></p>
@@ -302,7 +311,7 @@ footer{
 
 <!-- CEREMONIA -->
 <section id="ceremonia" class="section fade">
-  <h2 class="section-title">Ceremonia</h2>
+  <h3 class="section-title">Ceremonia</h3>
   <div class="card">
     <p>Iglesia de Santiago</p>
     <p>16 de Septiembre 835, Barrio de Santiago, 78049 San Luis Potosí, S.L.P.</p>
@@ -316,8 +325,8 @@ footer{
   <h2 class="section-title">Recepción</h2>
   <div class="card">
     <p>La Antigua</p>
-    <p>Zacatecas - San Luis Potosi 105, San Angel 1ra Secc, 78120 San Luis Potosí, S.L.P.</p>
-    <p>6:00 PM</p>
+    <p>Zacatecas - San Luis Potosi 105, San Angel 1ra Secc, 78120 San Luis Potosí, S.L.P.<p>
+    <p>6:00 PM<p>
     <a href="https://maps.app.goo.gl/71q3nWXHGXbKt4AdA" target="_blank" class="button">Ver ubicación</a>  
   </div>
 </section>
@@ -391,20 +400,19 @@ if(boletos){
 if(boletos){
   const select = document.getElementById("asistentes");
   const max = parseInt(boletos);
-
   for(let i=0; i<=max; i++){
     const option = document.createElement("option");
     option.value = i;
-    option.text = i === 0 ? "No asistiremos" : i + " asistente(s)";
+    option.text = (i === 0) ? "No asistiremos" : i + " asistente(s)";
     select.appendChild(option);
   }
 
   document.getElementById("rsvpBtn").addEventListener("click", function(){
     const cantidad = select.value;
     const nombreCompleto = fname + " " + (lname||"");
-    let mensaje = cantidad == 0 ?
-      "Hola, somos " + nombreCompleto + " y lamentablemente no podremos asistir." :
-      "Hola, somos " + nombreCompleto + " y confirmamos " + cantidad + " asistente(s).";
+    let mensaje = (cantidad == 0)
+      ? "Hola, somos " + nombreCompleto + " y lamentablemente no podremos asistir."
+      : "Hola, somos " + nombreCompleto + " y confirmamos " + cantidad + " asistente(s).";
     this.href = "https://wa.me/5214445391211?text=" + encodeURIComponent(mensaje);
   });
 }
