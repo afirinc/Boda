@@ -321,6 +321,34 @@ footer{
   }
 }
 }
+  /* PETALOS */
+#petalos{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:999;
+}
+
+.petalo{
+  position:absolute;
+  width:25px;
+  animation:caer linear forwards;
+}
+
+@keyframes caer{
+  0%{
+    transform:translateY(-50px) rotate(0deg);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(110vh) rotate(360deg);
+    opacity:0.7;
+  }
+}
 
 </style>
 </head>
@@ -449,7 +477,7 @@ footer{
 <footer>
   Con amor, Julio Cesar & Yolanda
 </footer>
-
+<div id="petalos"></div>
 <script>
 // ABRIR INVITACION
 function openInvite(){
@@ -493,15 +521,59 @@ if(boletos){
 
 // COUNTDOWN
 const weddingDate=new Date("June 6, 2026 17:00:00").getTime();
-setInterval(function(){
+const countdown=setInterval(function(){
+
   const now=new Date().getTime();
   const d=weddingDate-now;
+
+  if(d<=0){
+
+    clearInterval(countdown);
+
+    document.getElementById("days").innerHTML=0;
+    document.getElementById("hours").innerHTML=0;
+    document.getElementById("minutes").innerHTML=0;
+    document.getElementById("seconds").innerHTML=0;
+
+    lanzarPetalos();
+
+    return;
+  }
+
   document.getElementById("days").innerHTML=Math.floor(d/(1000*60*60*24));
   document.getElementById("hours").innerHTML=Math.floor((d%(1000*60*60*24))/(1000*60*60));
   document.getElementById("minutes").innerHTML=Math.floor((d%(1000*60*60))/(1000*60));
   document.getElementById("seconds").innerHTML=Math.floor((d%(1000*60))/1000);
+
 },1000);
 
+
+  //condiciones petalos js
+  function lanzarPetalos(){
+
+  const contenedor=document.getElementById("petalos");
+
+  for(let i=0;i<30;i++){
+
+    const petalo=document.createElement("img");
+
+    petalo.src="https://raw.githubusercontent.com/afirinc/Boda/main/petalos.png";
+
+    petalo.className="petalo";
+
+    petalo.style.left=Math.random()*100+"vw";
+
+    petalo.style.animationDuration=(5+Math.random()*5)+"s";
+
+    contenedor.appendChild(petalo);
+
+    setTimeout(()=>{
+      petalo.remove();
+    },10000);
+
+  }
+
+}
 // ANIMACION SCROLL
 const faders=document.querySelectorAll(".fade");
 const observer=new IntersectionObserver(entries=>{
