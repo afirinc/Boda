@@ -287,6 +287,39 @@ footer{
     width:160px;
     opacity:0.15;
   }
+ /* =========================
+   NUESTRA HISTORIA SOBRE PEONIAS
+========================= */
+.titulo-historia{
+  position:relative;
+  width:90%;          /* ocupa casi todo el ancho de la pantalla */
+  max-width:320px;    /* ancho máximo en pantallas grandes */
+  margin:0 auto 40px;
+}
+
+.titulo-historia img{
+  width:100%;
+  display:block;
+}
+
+.titulo-historia h2{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-family:'Roman', serif;
+  color:var(--primary);
+  font-size:28px;
+  letter-spacing:2px;
+  text-align:center;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media(max-width:480px){
+  .titulo-historia h2{
+    font-size:22px; /* se reduce un poco en móviles muy pequeños */
+  }
+}
 }
 
 </style>
@@ -374,7 +407,10 @@ footer{
 
 <!-- GALERÍA -->
 <section class="section fade">
-  <h2 class="section-title">Nuestra Historia</h2>
+  <div class="titulo-historia">
+  <img src="peonias.webp">
+  <h2>NUESTRA HISTORIA</h2>
+</div>
   <div class="gallery">
     <img src="Cesaryyolis0.jpg" alt="Historia 1">
     <img src="Cesaryyolis1.jpg" alt="Historia 2">
