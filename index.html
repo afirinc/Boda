@@ -473,12 +473,12 @@ if(boletos){
 }
 
 if(boletos){
-  const select = document.getElementById("asistentes");
+  const select = document.getElementById("acompañantes");
   const max = parseInt(boletos);
   for(let i=0; i<=max; i++){
     const option = document.createElement("option");
     option.value = i;
-    option.text = (i === 0) ? "No asistiremos" : i + " asistente(s)";
+    option.text = (i === 0) ? "No asistiremos" : i + " acompañante(s)";
     select.appendChild(option);
   }
 
@@ -486,8 +486,8 @@ if(boletos){
     const cantidad = select.value;
     const nombreCompleto = fname + " " + (lname||"");
     let mensaje = (cantidad == 0)
-      ? "Hola, somos " + nombreCompleto + " y lamentablemente no podremos asistir."
-      : "Hola, somos " + nombreCompleto + " y confirmamos " + cantidad + " asistente(s).";
+      ? "Hola, soy " + nombreCompleto + " y lamentablemente no podremos asistir."
+      : "Hola, soy " + nombreCompleto + " y confirmamos " + cantidad + " acompañante(s).";
     this.href = "https://wa.me/5214445391211?text=" + encodeURIComponent(mensaje);
   });
 }
