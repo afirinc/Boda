@@ -34,7 +34,7 @@
   font-style: normal;
 }
 :root{
-  --primary:#C17C6D;       /* color elegante para boda */
+  --primary:#C17C6D;
   --secondary:#B07D6D;     
   --soft:#F8F4F0;          
   --text:#333333;          
@@ -122,24 +122,23 @@ body{
   color:white;
   cursor:pointer;
   font-size:14px;
-  font-family: 'Roman', serif;  /* cambio a Roman */
+  font-family: 'Roman', serif;
 }
 .hidden{opacity:0;pointer-events:none;}
 /*fondo*/
-  .footer{
+.footer{
   text-align:center;
   padding:20px 20px 200px;
   background-image:url("https://raw.githubusercontent.com/afirinc/Boda/refs/heads/main/fondo.png");
   background-size:contain;
   background-position:bottom center;
   background-repeat:no-repeat;
-
 }
 /* HERO */
 .hero{
   background:
-    url("marcop.png") 55% top/contain no-repeat,  /* marco decorativo */
-    var(--soft);                                  /* fondo beige original */
+    url("marcop.png") 55% top/contain no-repeat,
+    var(--soft);
   min-height:100vh;
   display:flex;
   flex-direction:column;
@@ -176,7 +175,7 @@ body{
   color:white;
   text-decoration:none;
   transition:.3s;
-  font-family: 'Roman', serif;  /* cambio a Roman */
+  font-family: 'Roman', serif;
 }
 .button:hover{background:var(--secondary)}
 
@@ -199,7 +198,7 @@ body{
   font-size:24px;
   font-weight:600;
   color:var(--primary);
-  font-family: 'Roman', serif;  /* cambio a Roman */
+  font-family: 'Roman', serif;
 }
 
 /* Secciones */
@@ -209,7 +208,7 @@ body{
   background:var(--soft);
 }
 .section-title{
-  font-family:'Roman', serif;  /* cambio a Roman */
+  font-family:'Roman', serif;
   font-size:36px;
   color:var(--primary);
   margin-bottom:40px;
@@ -261,7 +260,7 @@ footer{
   background:var(--soft);
   font-size:14px;
   color:var(--text);
-  font-family: 'Roman', serif;  /* cambio a Roman */
+  font-family: 'Roman', serif;
 }
 
 /* Media queries */
@@ -301,8 +300,8 @@ footer{
 ========================= */
 .titulo-historia{
   position:relative;
-  width:90%;          /* ocupa casi todo el ancho de la pantalla */
-  max-width:320px;    /* ancho máximo en pantallas grandes */
+  width:90%;
+  max-width:320px;
   margin:0 auto 40px;
 }
 
@@ -323,14 +322,13 @@ footer{
   text-align:center;
 }
 
-/* Ajuste para pantallas pequeñas */
 @media(max-width:480px){
   .titulo-historia h2{
-    font-size:22px; /* se reduce un poco en móviles muy pequeños */
+    font-size:22px;
   }
 }
 }
-  /* PETALOS */
+/* PETALOS */
 #petalos{
   position:fixed;
   top:0;
@@ -396,7 +394,6 @@ footer{
   <a href="#ceremonia" class="button">Ver detalles</a>
 </section>
 
-
 <!-- CEREMONIA -->
 <section id="ceremonia" class="section fade">
 
@@ -407,7 +404,7 @@ footer{
 
   <div class="card">
     <p>Iglesia de Santiago</p>
-      <img src="https://raw.githubusercontent.com/afirinc/Boda/refs/heads/main/Iglesia.png" style="width:250px; display:block; margin:5px auto 15px; border-radius:10px;"> <!-- Imagen de la iglesia -->
+      <img src="https://raw.githubusercontent.com/afirinc/Boda/refs/heads/main/Iglesia.png" style="width:250px; display:block; margin:5px auto 15px; border-radius:10px;">
     <p>16 de Septiembre 835, Barrio de Santiago, 78049 San Luis Potosí, S.L.P.</p>
     <p>4:00 PM</p>
     <a href="https://maps.app.goo.gl/kCRC6YxW3RKUTGLq5" target="_blank" class="button">Ver ubicación</a>
@@ -467,12 +464,12 @@ footer{
       Si deseas tener un detalle con nosotros,<br>
       habrá una <strong>mesa de regalos el día de la boda</strong>.
     </p>
-    <img src="https://raw.githubusercontent.com/afirinc/Boda/refs/heads/main/regalo-convertido-de-png.webp" style="width:250px; display:block; margin:5px auto 15px; border-radius:10px;"> <!-- Imagen de la iglesia -->
+    <img src="https://raw.githubusercontent.com/afirinc/Boda/refs/heads/main/regalo-convertido-de-png.webp" style="width:250px; display:block; margin:5px auto 15px; border-radius:10px;">
   </div>
 </section>
 
 <!-- RSVP -->
-<section class="section fade">
+<section id="rsvpSection" class="section fade">
   <h2 class="section-title">Confirmar Asistencia</h2>
   <div class="date">Agradecemos respetar el número de invitados indicado en su invitación</div>
   <div class="card">
@@ -496,26 +493,22 @@ function openInvite(){
   window.scrollTo(0,0);
   document.getElementById("music").play();
 }
-//Calendario funcion//
 
-// Datos de la boda
+// Calendario
 const weddingTitle = "Boda Julio Cesar & Yolanda";
 const weddingLocation = "Iglesia de Santiago, San Luis Potosí, S.L.P.";
 const weddingDescription = "¡Nos casamos! Acompáñanos a celebrar este día tan especial.";
-const weddingStart = "2026-06-06T16:00:00"; // ISO
+const weddingStart = "2026-06-06T16:00:00";
 const weddingEnd = "2026-06-06T20:00:00";
 
-// Función para detectar móvil
 function isMobile() {
   return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 }
 
-// Botón de calendario
 const btn = document.getElementById("calendarBtn");
 
 if (btn) {
   if (isMobile()) {
-    // Crear archivo ICS para móvil
     const icsContent =
 `BEGIN:VCALENDAR
 VERSION:2.0
@@ -533,7 +526,6 @@ END:VCALENDAR`;
     btn.href = url;
     btn.setAttribute("download", "Boda-Julios-Yolanda.ics");
   } else {
-    // Google Calendar para escritorio
     btn.href =
       `https://www.google.com/calendar/render?action=TEMPLATE` +
       `&text=${encodeURIComponent(weddingTitle)}` +
@@ -579,15 +571,12 @@ if(boletos){
 }
 
 // COUNTDOWN
-const weddingDate = new Date("March 6, 2026 14:30:00").getTime();
-                            
+const weddingDate = new Date("Jun 6, 2026 16:00:00").getTime();
 const countdown=setInterval(function(){
-
   const now=new Date().getTime();
   const d=weddingDate-now;
 
   if(d<=0){
-
     clearInterval(countdown);
 
     document.getElementById("days").innerHTML=0;
@@ -597,13 +586,13 @@ const countdown=setInterval(function(){
 
     lanzarPetalos();
 
-    // === NUEVO: mostrar galería y ocultar RSVP ===
-    const rsvpSection = document.querySelector("section:nth-of-type(6)"); // sección RSVP
+    // ocultar RSVP
+    const rsvpSection = document.getElementById("rsvpSection");
     if(rsvpSection) rsvpSection.style.display = "none";
 
     // Crear botón de Drive
     const driveBtn = document.createElement("a");
-    driveBtn.href = "https://drive.google.com/drive/folders/1z7-hI7M_-fdL4KVLWRLIhU9qSlQJrDER"; // <- reemplaza con tu carpeta
+    driveBtn.href = "https://drive.google.com/drive/folders/TU_CARPETA_DE_DRIVE";
     driveBtn.textContent = "Ver fotos de la boda";
     driveBtn.className = "button";
     driveBtn.target = "_blank";
@@ -623,32 +612,20 @@ const countdown=setInterval(function(){
 
 },1000);
 
-
-//condiciones petalos js
+// PETALOS
 function lanzarPetalos(){
-
   const contenedor=document.getElementById("petalos");
 
   for(let i=0;i<30;i++){
-
     const petalo=document.createElement("img");
-
     petalo.src="https://raw.githubusercontent.com/afirinc/Boda/fd9ce798cdcb532cccddccdc62bb43673e736fab/petalos.png";
-
     petalo.className="petalo";
-
     petalo.style.left=Math.random()*100+"vw";
-
     petalo.style.animationDuration=(5+Math.random()*5)+"s";
-
     contenedor.appendChild(petalo);
 
-    setTimeout(()=>{
-      petalo.remove();
-    },10000);
-
+    setTimeout(()=>{ petalo.remove(); },10000);
   }
-
 }
 
 // ANIMACION SCROLL
@@ -662,6 +639,9 @@ const observer=new IntersectionObserver(entries=>{
 });
 faders.forEach(el=>observer.observe(el));
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
