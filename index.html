@@ -125,7 +125,16 @@ body{
   font-family: 'Roman', serif;  /* cambio a Roman */
 }
 .hidden{opacity:0;pointer-events:none;}
-
+/*fondo*/
+  .footer{
+  text-align:center;
+  padding-top:120px; /* espacio para que se vea el texto arriba */
+  padding-bottom:20px;
+  background-image:url("https://raw.githubusercontent.com/afirinc/Boda/refs/heads/main/fondo.png");
+  background-size:cover; /* ajusta la imagen al ancho */
+  background-position:bottom center; /* la fija abajo */
+  background-repeat:no-repeat;
+}
 /* HERO */
 .hero{
   background:
@@ -474,9 +483,8 @@ footer{
   </div>
 </section>
 
-<footer>
+<footer class="footer">
   Con amor, Julio Cesar & Yolanda
-   <img src="https://raw.githubusercontent.com/afirinc/Boda/refs/heads/main/fondo.png" style="width:320px; display:block; margin:0 auto 10px;">
 </footer>
 <div id="petalos"></div>
 <script>
