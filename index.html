@@ -497,9 +497,6 @@ function openInvite(){
   document.getElementById("music").play();
 }
 //Calendario funcion//
-  // ============================
-// BOTÓN AGREGAR AL CALENDARIO
-// ============================
 
 // Datos de la boda
 const weddingTitle = "Boda Julio Cesar & Yolanda";
@@ -547,7 +544,7 @@ END:VCALENDAR`;
     btn.target = "_blank";
   }
 }
-  
+
 // PERSONALIZACION DESDE URL
 const params=new URLSearchParams(window.location.search);
 const fname=params.get("fname");
@@ -599,6 +596,22 @@ const countdown=setInterval(function(){
 
     lanzarPetalos();
 
+    // === NUEVO: mostrar galería y ocultar RSVP ===
+    const rsvpSection = document.querySelector("section:nth-of-type(6)"); // sección RSVP
+    if(rsvpSection) rsvpSection.style.display = "none";
+
+    // Crear botón de Drive
+    const driveBtn = document.createElement("a");
+    driveBtn.href = "https://drive.google.com/drive/folders/TU_CARPETA_DE_DRIVE"; // <- reemplaza con tu carpeta
+    driveBtn.textContent = "Ver fotos de la boda";
+    driveBtn.className = "button";
+    driveBtn.target = "_blank";
+    driveBtn.style.marginTop = "20px";
+    driveBtn.style.display = "inline-block";
+
+    const hero = document.querySelector(".hero");
+    if(hero) hero.appendChild(driveBtn);
+
     return;
   }
 
@@ -610,8 +623,8 @@ const countdown=setInterval(function(){
 },1000);
 
 
-  //condiciones petalos js
-  function lanzarPetalos(){
+//condiciones petalos js
+function lanzarPetalos(){
 
   const contenedor=document.getElementById("petalos");
 
@@ -636,6 +649,7 @@ const countdown=setInterval(function(){
   }
 
 }
+
 // ANIMACION SCROLL
 const faders=document.querySelectorAll(".fade");
 const observer=new IntersectionObserver(entries=>{
