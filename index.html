@@ -411,6 +411,7 @@ footer{
     <p>16 de Septiembre 835, Barrio de Santiago, 78049 San Luis Potosí, S.L.P.</p>
     <p>4:00 PM</p>
     <a href="https://maps.app.goo.gl/kCRC6YxW3RKUTGLq5" target="_blank" class="button">Ver ubicación</a>
+    <a id="calendarBtn" class="button">Agregar al calendario</a>
   </div>
 
 </section>
@@ -495,7 +496,58 @@ function openInvite(){
   window.scrollTo(0,0);
   document.getElementById("music").play();
 }
+//Calendario funcion//
+  // ============================
+// BOTÓN AGREGAR AL CALENDARIO
+// ============================
 
+// Datos de la boda
+const weddingTitle = "Boda Julio Cesar & Yolanda";
+const weddingLocation = "Iglesia de Santiago, San Luis Potosí, S.L.P.";
+const weddingDescription = "¡Nos casamos! Acompáñanos a celebrar este día tan especial.";
+const weddingStart = "2026-06-06T16:00:00"; // ISO
+const weddingEnd = "2026-06-06T20:00:00";
+
+// Función para detectar móvil
+function isMobile() {
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+}
+
+// Botón de calendario
+const btn = document.getElementById("calendarBtn");
+
+if (btn) {
+  if (isMobile()) {
+    // Crear archivo ICS para móvil
+    const icsContent =
+`BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:${weddingTitle}
+DTSTART:${weddingStart.replace(/-|:|\.\d+/g,"")}
+DTEND:${weddingEnd.replace(/-|:|\.\d+/g,"")}
+LOCATION:${weddingLocation}
+DESCRIPTION:${weddingDescription}
+END:VEVENT
+END:VCALENDAR`;
+
+    const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    btn.href = url;
+    btn.setAttribute("download", "Boda-Julios-Yolanda.ics");
+  } else {
+    // Google Calendar para escritorio
+    btn.href =
+      `https://www.google.com/calendar/render?action=TEMPLATE` +
+      `&text=${encodeURIComponent(weddingTitle)}` +
+      `&dates=${weddingStart.replace(/-|:|\.\d+/g,"")}/${weddingEnd.replace(/-|:|\.\d+/g,"")}` +
+      `&details=${encodeURIComponent(weddingDescription)}` +
+      `&location=${encodeURIComponent(weddingLocation)}` +
+      `&sf=true&output=xml`;
+    btn.target = "_blank";
+  }
+}
+  
 // PERSONALIZACION DESDE URL
 const params=new URLSearchParams(window.location.search);
 const fname=params.get("fname");
