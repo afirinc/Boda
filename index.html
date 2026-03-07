@@ -570,7 +570,7 @@ if(boletos){
   });
 }
 
-// COUNTDOWN
+// COUNTDOWN//
 const weddingDate = new Date("June 6, 2026 16:00:00").getTime();
 const countdown=setInterval(function(){
   const now=new Date().getTime();
@@ -586,11 +586,11 @@ const countdown=setInterval(function(){
 
     lanzarPetalos();
 
-    // ocultar RSVP
+    // ocultar RSVP//
     const rsvpSection = document.getElementById("rsvpSection");
     if(rsvpSection) rsvpSection.style.display = "none";
 
-    // Crear botón de Drive
+    // Crear botón de Drive//
     const driveBtn = document.createElement("a");
     driveBtn.href = "https://drive.google.com/drive/folders/1z7-hI7M_-fdL4KVLWRLIhU9qSlQJrDER";
     driveBtn.textContent = "Ver fotos de la boda";
@@ -612,7 +612,7 @@ const countdown=setInterval(function(){
 
 },1000);
 
-// PETALOS
+// PETALOS//Deja de ver el codigo//
 function lanzarPetalos(){
   const contenedor=document.getElementById("petalos");
 
@@ -628,7 +628,7 @@ function lanzarPetalos(){
   }
 }
 
-// ANIMACION SCROLL
+// ANIMACION SCROLL// //Deja de ver el codigo//
 const faders=document.querySelectorAll(".fade");
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
@@ -638,6 +638,13 @@ const observer=new IntersectionObserver(entries=>{
   });
 });
 faders.forEach(el=>observer.observe(el));
+
+  //JEJE que haces viendo el codigo??? , Mejor Regalame un comedor por la boda//
+  setInterval(function(){
+  if(window.outerWidth - window.innerWidth > 200){
+    document.body.innerHTML="";
+  }
+},1000);
 </script>
 
 </body>
