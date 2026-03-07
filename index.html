@@ -475,10 +475,10 @@ footer{
   <h2 class="section-title">Confirmar Asistencia</h2>
   <div class="date">Agradecemos respetar el número de invitados indicados en su invitación</div>
   <div class="card">
-    <p>Selecciona el número de acompañantes</p>
+    <p>Selecciona el número de personas para asistir ala boda</p>
 
     <div style="max-width:300px;margin:auto;display:flex;flex-direction:column;gap:15px;">
-      <select id="acompañantes" style="padding:10px;border-radius:10px;"></select>
+      <select id="Persona" style="padding:10px;border-radius:10px;"></select>
       <a id="rsvpBtn" class="button" target="_blank">Confirmar por WhatsApp</a>
     </div>
   </div>
@@ -553,12 +553,12 @@ if(boletos){
 }
 
 if(boletos){
-  const select = document.getElementById("acompañantes");
+  const select = document.getElementById("Persona");
   const max = parseInt(boletos);
   for(let i=0; i<=max; i++){
     const option = document.createElement("option");
     option.value = i;
-    option.text = (i === 0) ? "No asistiremos" : i + " acompañante(s)";
+    option.text = (i === 0) ? "No asistiremos" : i + " Persona(s)";
     select.appendChild(option);
   }
 
