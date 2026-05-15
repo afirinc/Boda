@@ -330,6 +330,78 @@ footer{
   }
 }
 }
+  /* ======= ITINERARIO ======= */
+.it-wrap{
+  max-width:520px;
+  margin:0 auto;
+  position:relative;
+}
+.it-wrap::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:0; bottom:0;
+  width:1.5px;
+  background:#8a7a6a;
+  transform:translateX(-50%);
+}
+.it-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  position:relative;
+  min-height:90px;
+}
+.it-row::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:22px;
+  transform:translateX(-50%);
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#8a7a6a;
+  z-index:1;
+}
+.it-left{
+  padding:14px 28px 14px 0;
+  text-align:right;
+}
+.it-right{
+  padding:14px 0 14px 28px;
+  text-align:left;
+}
+.it-empty{ min-height:90px; }
+.it-time{
+  display:block;
+  font-family:'Rubik',sans-serif;
+  font-size:15px;
+  font-weight:500;
+  color:#4a3f35;
+  margin-bottom:3px;
+}
+.it-name{
+  display:block;
+  font-family:'Rubik',sans-serif;
+  font-size:15px;
+  color:#4a3f35;
+  line-height:1.5;
+  margin-bottom:10px;
+}
+.it-dots{
+  display:block;
+  border:none;
+  border-top:1.5px dotted #c4afa0;
+  width:100%;
+  margin-top:4px;
+}
+@media(max-width:480px){
+  .it-wrap::before{left:14px;}
+  .it-row{grid-template-columns:1fr;padding-left:36px;}
+  .it-row::after{left:14px;}
+  .it-left,.it-right{text-align:left;padding:10px;}
+  .it-empty{display:none;}
+}
 /* PETALOS */
 #petalos{
   position:fixed;
@@ -429,6 +501,61 @@ footer{
     <p>Zacatecas - San Luis Potosi 105, San Angel 1ra Secc, 78120 San Luis Potosí, S.L.P.<p>
     <p>6:00 PM<p>
     <a href="https://maps.app.goo.gl/71q3nWXHGXbKt4AdA" target="_blank" class="button">Ver ubicación</a>  
+  </div>
+</section>
+  <!-- ITINERARIO -->
+<section class="section fade">
+  <h2 class="section-title">
+    <img src="floral.png" style="width:320px;display:block;margin:0 auto 10px;">
+    Itinerario
+  </h2>
+  <div class="it-wrap">
+
+    <div class="it-row">
+      <div class="it-left">
+        <span class="it-time">4:00 PM:</span>
+        <span class="it-name">Ceremonia Religiosa</span>
+        <hr class="it-dots">
+      </div>
+      <div class="it-empty"></div>
+    </div>
+
+    <div class="it-row">
+      <div class="it-empty"></div>
+      <div class="it-right">
+        <span class="it-time">6:00 PM:</span>
+        <span class="it-name">Boda Civil</span>
+        <hr class="it-dots">
+      </div>
+    </div>
+
+    <div class="it-row">
+      <div class="it-left">
+        <span class="it-time">7:00 PM:</span>
+        <span class="it-name">Bienvenida a los Novios</span>
+        <hr class="it-dots">
+      </div>
+      <div class="it-empty"></div>
+    </div>
+
+    <div class="it-row">
+      <div class="it-empty"></div>
+      <div class="it-right">
+        <span class="it-time">7:20 PM:</span>
+        <span class="it-name">Cena</span>
+        <hr class="it-dots">
+      </div>
+    </div>
+
+    <div class="it-row">
+      <div class="it-left">
+        <span class="it-time">8:20 PM:</span>
+        <span class="it-name">Highlights<br>Protocolos</span>
+        <hr class="it-dots">
+      </div>
+      <div class="it-empty"></div>
+    </div>
+
   </div>
 </section>
 
